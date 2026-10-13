@@ -1,25 +1,111 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import MobileDrawer from "./MobileDrawer";
 import { useAuth } from "@/hooks/useAuth";
 
 export default function Header() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const { user, logout } = useAuth();
+
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { user } = useAuth();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Determine if current route should always have solid navbar
+  const alwaysSolidRoutes = [
+    "/packages",
+    "/destinations",
+    "/itinerary",
+    "/dashboard",
+    "/book",
+    "/pay-installment",
+    "/articles",
+    "/about",
+    "/contact",
+    "/faq",
+    "/careers",
+    "/terms",
+    "/privacy",
+    "/refund",
+    "/visa-free",
+  ];
+  const isAlwaysSolid = alwaysSolidRoutes.some((route) => pathname.startsWith(route));
+
+  useEffect(() => {
+    if (isAlwaysSolid) {
+      setScrolled(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isAlwaysSolid, pathname]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropdownOpen]);
+
+  // Close dropdown on pathname change
+  useEffect(() => {
+    setDropdownOpen(false);
+  }, [pathname]);
+
+  const handleLogout = async () => {
+    setDropdownOpen(false);
+    await logout();
+    router.push("/");
+  };
 
   const focusSearch = () => {
     const input = document.getElementById("destSearchInput");
     if (input) {
       input.focus();
       input.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      router.push("/destinations");
     }
   };
 
+  const initials = user
+    ? `${user.firstName?.[0] || ""}${user.lastName?.[0] || ""}`.toUpperCase() || "TT"
+    : "TT";
+
   return (
     <>
-      <header className="site-header">
+      <header
+        className={`site-header ${scrolled ? "scrolled" : ""}`}
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+          transition: "all 0.28s cubic-bezier(0.25, 1, 0.5, 1)",
+          background: scrolled ? "rgba(250, 247, 242, 0.95)" : "transparent",
+          backdropFilter: scrolled ? "blur(18px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
+          borderBottom: scrolled ? "1px solid var(--border-warm)" : "1px solid transparent",
+          boxShadow: scrolled ? "0 4px 20px -2px rgba(60, 40, 20, 0.08)" : "none",
+          padding: scrolled ? "10px 0" : "14px 0",
+        }}
+      >
         <div className="container nav-inner">
           {/* Brand Logo */}
           <Link href="/" className="brand-logo">
@@ -29,7 +115,7 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Center Navigation Links with Chevrons */}
+          {/* Center Navigation Links */}
           <ul className="nav-links-list">
             <li>
               <Link href="/destinations" className="nav-link-item">
@@ -71,11 +157,12 @@ export default function Header() {
 
           {/* Right Nav Actions */}
           <div className="nav-right-actions">
-            {/* Search Outline Icon */}
+            {/* Search Button */}
             <button
               className="nav-icon-btn"
               aria-label="Search"
               onClick={focusSearch}
+              type="button"
             >
               <svg
                 width="18"
@@ -92,8 +179,13 @@ export default function Header() {
               </svg>
             </button>
 
-            {/* Wishlist Heart Outline Icon */}
-            <Link href="/dashboard?tab=wishlist" className="nav-icon-btn" aria-label="Wishlist">
+            {/* Wishlist Link */}
+            <Link
+              href="/dashboard?tab=wishlist"
+              className="nav-icon-btn"
+              aria-label="Wishlist"
+              title="Saved Escapes"
+            >
               <svg
                 width="18"
                 height="18"
@@ -108,12 +200,272 @@ export default function Header() {
               </svg>
             </Link>
 
-            {/* Account / Login Trigger */}
+            {/* Account Trigger & Dropdown */}
             {user ? (
-              <Link href="/dashboard" className="nav-account-btn" title="Traveler Dashboard">
-                <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--brand-gold)" }}>person</span>
-                <span className="nav-user-firstname">{user.firstName || "Account"}</span>
-              </Link>
+              <div ref={dropdownRef} style={{ position: "relative" }}>
+                <button
+                  type="button"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    padding: "5px 12px 5px 6px",
+                    background: "rgba(88, 55, 30, 0.06)",
+                    border: "1px solid var(--border-warm)",
+                    borderRadius: "999px",
+                    cursor: "pointer",
+                    transition: "var(--transition)",
+                  }}
+                  title="Traveler Cockpit"
+                >
+                  <div
+                    style={{
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "50%",
+                      background: "var(--brand-brown)",
+                      color: "#FFFFFF",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {initials}
+                  </div>
+                  <span
+                    style={{
+                      fontSize: "13.5px",
+                      fontWeight: 600,
+                      color: "var(--brand-brown)",
+                      maxWidth: "100px",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {user.firstName || "Account"}
+                  </span>
+                  <span
+                    className="material-symbols-rounded"
+                    style={{
+                      fontSize: "16px",
+                      color: "var(--brand-ochre)",
+                      transition: "transform 0.2s",
+                      transform: dropdownOpen ? "rotate(180deg)" : "none",
+                    }}
+                  >
+                    keyboard_arrow_down
+                  </span>
+                </button>
+
+                {/* Dropdown Menu */}
+                {dropdownOpen && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "calc(100% + 8px)",
+                      right: 0,
+                      width: "250px",
+                      background: "#FFFFFF",
+                      borderRadius: "16px",
+                      border: "1.5px solid var(--border-warm)",
+                      boxShadow: "0 16px 36px -6px rgba(60, 40, 20, 0.16)",
+                      overflow: "hidden",
+                      zIndex: 1100,
+                      animation: "fadeInDown 0.18s ease-out",
+                    }}
+                  >
+                    {/* Header info */}
+                    <div style={{ padding: "14px 16px", background: "var(--bg-cream)", borderBottom: "1px solid var(--border-light)" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                        <div
+                          style={{
+                            width: "36px",
+                            height: "36px",
+                            borderRadius: "50%",
+                            background: "var(--brand-brown)",
+                            color: "#FFFFFF",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "13px",
+                            fontWeight: 700,
+                          }}
+                        >
+                          {initials}
+                        </div>
+                        <div style={{ overflow: "hidden" }}>
+                          <strong style={{ fontSize: "14px", color: "var(--brand-brown)", display: "block", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
+                            {user.firstName} {user.lastName}
+                          </strong>
+                          <span style={{ fontSize: "11.5px", color: "var(--text-muted)", display: "block", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap" }}>
+                            {user.email}
+                          </span>
+                        </div>
+                      </div>
+                      <div style={{ marginTop: 8, display: "inline-flex", alignItems: "center", gap: 4, background: "#FEF3C7", padding: "2px 8px", borderRadius: 999, fontSize: "11px", color: "#92400E", fontWeight: 600 }}>
+                        <span className="material-symbols-rounded" style={{ fontSize: 13 }}>diamond</span>
+                        <span>Connoisseur Traveler</span>
+                      </div>
+                    </div>
+
+                    {/* Navigation Items */}
+                    <div style={{ padding: "6px 0" }}>
+                      <Link
+                        href="/dashboard?tab=overview"
+                        onClick={() => setDropdownOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "var(--text-dark)",
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-cream)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--brand-ochre)" }}>dashboard</span>
+                        <span>Traveler Cockpit</span>
+                      </Link>
+
+                      <Link
+                        href="/dashboard?tab=bookings"
+                        onClick={() => setDropdownOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "var(--text-dark)",
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-cream)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--brand-brown)" }}>luggage</span>
+                        <span>My Bookings</span>
+                      </Link>
+
+                      <Link
+                        href="/dashboard?tab=wishlist"
+                        onClick={() => setDropdownOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "var(--text-dark)",
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-cream)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18, color: "#E11D48" }}>favorite</span>
+                        <span>Saved Escapes</span>
+                      </Link>
+
+                      <Link
+                        href="/dashboard?tab=reviews"
+                        onClick={() => setDropdownOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "var(--text-dark)",
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-cream)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18, color: "#F59E0B" }}>rate_review</span>
+                        <span>My Reviews</span>
+                      </Link>
+
+                      <Link
+                        href="/dashboard?tab=profile"
+                        onClick={() => setDropdownOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "var(--text-dark)",
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-cream)")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--text-muted)" }}>manage_accounts</span>
+                        <span>Profile & Security</span>
+                      </Link>
+
+                      {user.role === "admin" && (
+                        <a
+                          href="http://localhost:3001"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setDropdownOpen(false)}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            padding: "9px 16px",
+                            fontSize: "13.5px",
+                            color: "#92400E",
+                            background: "#FEF3C7",
+                            textDecoration: "none",
+                            fontWeight: 600,
+                          }}
+                        >
+                          <span className="material-symbols-rounded" style={{ fontSize: 18 }}>admin_panel_settings</span>
+                          <span>Admin Control Panel</span>
+                        </a>
+                      )}
+                    </div>
+
+                    {/* Sign out */}
+                    <div style={{ borderTop: "1px solid var(--border-light)", padding: "4px 0" }}>
+                      <button
+                        type="button"
+                        onClick={handleLogout}
+                        style={{
+                          width: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "10px",
+                          padding: "9px 16px",
+                          fontSize: "13.5px",
+                          color: "#DC2626",
+                          background: "transparent",
+                          border: "none",
+                          cursor: "pointer",
+                          textAlign: "left",
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.background = "#FEF2F2")}
+                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span className="material-symbols-rounded" style={{ fontSize: 18 }}>logout</span>
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             ) : (
               <Link href="/login" className="nav-login-btn">
                 <span>Sign In</span>
@@ -143,6 +495,7 @@ export default function Header() {
               className="nav-hamburger"
               onClick={() => setDrawerOpen(true)}
               aria-label="Open Navigation Menu"
+              type="button"
             >
               <svg
                 width="22"

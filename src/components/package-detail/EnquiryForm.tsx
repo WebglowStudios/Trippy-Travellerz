@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "@/lib/api";
+import { useAuth } from "@/hooks/useAuth";
+import PhoneInput from "@/components/ui/PhoneInput";
 
 interface EnquiryFormProps {
   packageName: string;
@@ -20,6 +22,8 @@ export default function EnquiryForm({
   isOpen = false,
   onClose,
 }: EnquiryFormProps) {
+  const { user } = useAuth();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -28,6 +32,17 @@ export default function EnquiryForm({
     guests: "2 Adults (Couple)",
     message: "",
   });
+
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        name: prev.name || `${user.firstName || ""} ${user.lastName || ""}`.trim(),
+        email: prev.email || user.email || "",
+        phone: prev.phone || user.phone || "",
+      }));
+    }
+  }, [user]);
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -182,13 +197,10 @@ export default function EnquiryForm({
 
           <div className="enq-input-group">
             <label className="enq-label">Phone Number / WhatsApp *</label>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="+91 98765 43210"
-              className="enq-input"
+            <PhoneInput
               value={formData.phone}
-              onChange={handleChange}
+              onChange={(val) => setFormData((prev) => ({ ...prev, phone: val }))}
+              placeholder="Phone Number / WhatsApp"
               required
             />
           </div>

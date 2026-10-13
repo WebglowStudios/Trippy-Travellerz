@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { api } from "@/lib/api";
+import { useAuth } from "@/hooks/useAuth";
+import PhoneInput from "@/components/ui/PhoneInput";
 
 interface PriceCardProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -13,9 +15,16 @@ interface PriceCardProps {
 
 export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) {
   const router = useRouter();
+  const { user } = useAuth();
   const [showCallback, setShowCallback] = useState(false);
   const [callbackPhone, setCallbackPhone] = useState("");
   const [callbackStatus, setCallbackStatus] = useState<"idle" | "loading" | "done">("idle");
+
+  useEffect(() => {
+    if (user?.phone) {
+      setCallbackPhone(user.phone);
+    }
+  }, [user]);
 
   const price = pkg?.price || 124999;
   const originalPrice = pkg?.originalPrice || Math.round(price * 1.35);
@@ -183,15 +192,14 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
               <div style={{ fontSize: 13, fontWeight: 700, color: "var(--brand-brown)", marginBottom: 8 }}>
                 Enter your phone number
               </div>
-              <input
-                type="tel"
-                placeholder="+91 98765 43210"
-                className="enq-input"
-                style={{ marginBottom: 8 }}
-                value={callbackPhone}
-                onChange={(e) => setCallbackPhone(e.target.value)}
-                required
-              />
+              <div style={{ marginBottom: 10 }}>
+                <PhoneInput
+                  value={callbackPhone}
+                  onChange={(val) => setCallbackPhone(val)}
+                  placeholder="Your Phone / WhatsApp"
+                  required
+                />
+              </div>
               <button
                 type="submit"
                 disabled={callbackStatus === "loading"}
