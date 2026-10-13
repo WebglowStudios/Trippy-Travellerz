@@ -1,11 +1,12 @@
 "use client";
 
-import { use, useState, Suspense } from "react";
+import { use, useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CustomItineraryBanner from "@/components/packages/CustomItineraryBanner";
-import { getArticleBySlug, ARTICLES_DATA } from "@/lib/articles-data";
+import { getArticleBySlug, ARTICLES_DATA, Article } from "@/lib/articles-data";
+import { api } from "@/lib/api";
 
 interface ArticleDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -13,8 +14,88 @@ interface ArticleDetailPageProps {
 
 function ArticleDetailInner({ params }: ArticleDetailPageProps) {
   const resolvedParams = use(params);
-  const article = getArticleBySlug(resolvedParams.slug);
+  const [article, setArticle] = useState<Article | null>(() => getArticleBySlug(resolvedParams.slug) || null);
+  const [loading, setLoading] = useState(!article);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    async function fetchArticle() {
+      try {
+        const res = await api.get(`/articles/${resolvedParams.slug}`);
+        if (res.status === "success" && res.data) {
+          const d = res.data;
+          const rawContent =
+            typeof d.content === "object" && d.content?.sections
+              ? d.content
+              : {
+                  lead: d.excerpt || d.title,
+                  sections: [
+                    {
+                      heading: "Overview & Dispatches",
+                      body:
+                        typeof d.content === "string"
+                          ? d.content.split("\n\n").filter(Boolean)
+                          : ["Discover bespoke adventures curated for discerning travellers."],
+                    },
+                  ],
+                  takeaways: [
+                    "Reserve signature stays and private excursions well in advance.",
+                    "Contact Trippy Travellers concierge for VIP entry and tailored requests.",
+                  ],
+                };
+
+          setArticle({
+            slug: d.slug,
+            title: d.title,
+            subtitle: d.subtitle || d.excerpt || "",
+            excerpt: d.excerpt || "",
+            category: (d.category as any) || "Destinations",
+            publishedAt:
+              d.publishedAt ||
+              (d.createdAt
+                ? new Date(d.createdAt).toLocaleDateString("en-IN", { month: "long", year: "numeric" })
+                : "March 2026"),
+            readTime: `${d.readTime || 5} min read`,
+            author: {
+              name: d.author
+                ? `${d.author.firstName || ""} ${d.author.lastName || ""}`.trim() || "Editorial Team"
+                : "Senior Travel Specialist",
+              role: "Destination Lead & Storyteller",
+              avatar:
+                d.author?.avatar ||
+                "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80",
+            },
+            heroImage:
+              d.coverImage ||
+              d.heroImage ||
+              "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80",
+            tags: d.tags || ["Luxury Escapes", "Travel Guide"],
+            content: rawContent,
+          });
+        }
+      } catch {
+        // Fallback already assigned
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchArticle();
+  }, [resolvedParams.slug]);
+
+  if (loading) {
+    return (
+      <>
+        <Header />
+        <main style={{ minHeight: "75vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
+          <div style={{ width: 44, height: 44, border: "3.5px solid #EAE3D8", borderTopColor: "var(--brand-brown)", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
+          <p style={{ fontSize: 14, fontWeight: 600, color: "var(--brand-brown)" }}>Loading dispatch story...</p>
+          <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   if (!article) {
     return (
