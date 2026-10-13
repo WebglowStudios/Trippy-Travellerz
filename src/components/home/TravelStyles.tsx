@@ -83,7 +83,7 @@ export default function TravelStyles() {
   return (
     <section className="travel-styles-section" id="styles">
       <div className="container">
-        <div className="section-head-row">
+        <div className="section-head-row rv">
           <div>
             <span className="section-eyebrow">TRAVEL STYLES</span>
             <h2 className="section-h2">Journeys Tailored to Your Style</h2>
@@ -100,7 +100,7 @@ export default function TravelStyles() {
         </div>
 
         {/* 6 Travel Style Boxes */}
-        <div className="styles-grid-six">
+        <div className="styles-grid-six rv delay-1">
           {stylesList.map((style) => (
             <Link
               key={style.name}

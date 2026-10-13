@@ -44,7 +44,7 @@ export default function VisaFreeSection() {
   return (
     <section className="visa-free-section" id="visa-free">
       <div className="container">
-        <div className="section-head-row">
+        <div className="section-head-row rv">
           <div>
             <span className="section-eyebrow">VISA FREE TRAVEL</span>
             <h2 className="section-h2">
@@ -65,7 +65,7 @@ export default function VisaFreeSection() {
         </div>
 
         {/* 5 Visa-Free Cards Grid */}
-        <div className="visa-free-grid-five">
+        <div className="visa-free-grid-five rv delay-1">
           {visaCountries.map((c) => (
             <Link
               key={c.name}

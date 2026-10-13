@@ -78,7 +78,7 @@ export default function HeroBanner() {
 
       {/* Foreground Content */}
       <div className="container hero-content-wrap">
-        <div className="hero-text-col">
+        <div className="hero-text-col rv">
           <span className="hero-eyebrow">
             JOURNEYS BEYOND
             <br />
@@ -131,7 +131,7 @@ export default function HeroBanner() {
         </div>
 
         {/* Right Overlay: Handwritten "Travel Explore Belong --->" */}
-        <div className="hero-handwritten-text cursive">
+        <div className="hero-handwritten-text cursive rv-r delay-2">
           Travel
           <br />
           Explore

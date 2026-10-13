@@ -67,7 +67,7 @@ export default function TravelDifferently() {
       <div className="container">
         {/* 3-Column Expandable Cards Row */}
         <div
-          className="travel-diff-row"
+          className="travel-diff-row rv"
           id="travelDiffRow"
           onMouseLeave={() => setExpandedIndex(0)}
         >
@@ -125,7 +125,7 @@ export default function TravelDifferently() {
         </div>
 
         {/* Stats Counter Bar Below */}
-        <div className="stats-counter-strip">
+        <div className="stats-counter-strip rv delay-1">
           {/* 1. 10K+ Happy Travelers */}
           <div className="stat-badge-unit">
             <div className="stat-badge-icon">

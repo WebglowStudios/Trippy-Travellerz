@@ -91,21 +91,7 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`site-header ${scrolled ? "scrolled" : ""}`}
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-          transition: "all 0.28s cubic-bezier(0.25, 1, 0.5, 1)",
-          background: scrolled ? "rgba(250, 247, 242, 0.95)" : "transparent",
-          backdropFilter: scrolled ? "blur(18px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
-          borderBottom: scrolled ? "1px solid var(--border-warm)" : "1px solid transparent",
-          boxShadow: scrolled ? "0 4px 20px -2px rgba(60, 40, 20, 0.08)" : "none",
-          padding: scrolled ? "10px 0" : "14px 0",
-        }}
-      >
+      <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-inner">
           {/* Brand Logo */}
           <Link href="/" className="brand-logo">
@@ -211,11 +197,12 @@ export default function Header() {
                     alignItems: "center",
                     gap: "8px",
                     padding: "5px 12px 5px 6px",
-                    background: "rgba(88, 55, 30, 0.06)",
-                    border: "1px solid var(--border-warm)",
+                    background: scrolled ? "rgba(88, 55, 30, 0.06)" : "rgba(255, 255, 255, 0.16)",
+                    border: scrolled ? "1px solid var(--border-warm)" : "1px solid rgba(255, 255, 255, 0.3)",
                     borderRadius: "999px",
                     cursor: "pointer",
                     transition: "var(--transition)",
+                    backdropFilter: scrolled ? "none" : "blur(8px)",
                   }}
                   title="Traveler Cockpit"
                 >
@@ -239,7 +226,7 @@ export default function Header() {
                     style={{
                       fontSize: "13.5px",
                       fontWeight: 600,
-                      color: "var(--brand-brown)",
+                      color: scrolled ? "var(--brand-brown)" : "#FFFFFF",
                       maxWidth: "100px",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -252,7 +239,7 @@ export default function Header() {
                     className="material-symbols-rounded"
                     style={{
                       fontSize: "16px",
-                      color: "var(--brand-ochre)",
+                      color: scrolled ? "var(--brand-ochre)" : "#E5A96A",
                       transition: "transform 0.2s",
                       transform: dropdownOpen ? "rotate(180deg)" : "none",
                     }}

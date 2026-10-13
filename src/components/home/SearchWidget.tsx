@@ -93,7 +93,7 @@ export default function SearchWidget() {
   return (
     <section className="search-section-wrap" id="search">
       <div className="container">
-        <div className="search-widget-container">
+        <div className="search-widget-container rv">
           {/* Tier 1: The Tab Header Bar */}
           <div className="search-tabs-tier">
             <div
@@ -296,7 +296,7 @@ export default function SearchWidget() {
         </div>
 
         {/* Trust & Service Badges (Horizontal Row of 5) */}
-        <div className="trust-badges-row">
+        <div className="trust-badges-row rv delay-1">
           {/* 1. Handpicked Experiences */}
           <div className="trust-badge-col">
             <div className="trust-badge-icon">

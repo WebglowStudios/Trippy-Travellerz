@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface Testimonial {
   name: string;
@@ -8,41 +8,100 @@ interface Testimonial {
   quote: string;
   avatar: string;
   stars: string;
+  badge?: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     name: "Rohan Mehta",
     trip: "Traveled to Kashmir",
-    quote: "“An unforgettable experience! Everything was perfectly planned and the support team was amazing.”",
+    quote: "“An unforgettable experience! The houseboat stay on Dal Lake and helicopter ride over Gulmarg were curated beyond expectations.”",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face",
     stars: "★★★★★",
+    badge: "Verified Traveler",
   },
   {
     name: "Priya Sharma",
     trip: "Traveled to Kerala",
-    quote: "“The best trip of our lives. Beautiful destinations and seamless arrangements.”",
+    quote: "“The private pool villa in Munnar and luxury houseboat cruise in Alleppey were pristine. Our concierge attended to every little detail.”",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&fit=crop&crop=face",
     stars: "★★★★★",
+    badge: "Verified Traveler",
   },
   {
     name: "Amit Verma",
     trip: "Traveled to Ladakh",
-    quote: "“Highly professional and personalized service. Felt safe and well taken care of.”",
+    quote: "“Highly professional and personalized service. Driving over Khardung La with their premium support team made us feel completely safe.”",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face",
     stars: "★★★★★",
+    badge: "Verified Traveler",
+  },
+  {
+    name: "Ananya Iyer",
+    trip: "Traveled to Dubai",
+    quote: "“From the Burj Khalifa VIP lounge to the desert starlight dinner, everything was pure luxury. Truly a 5-star experience throughout.”",
+    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&h=120&fit=crop&crop=face",
+    stars: "★★★★★",
+    badge: "Verified Traveler",
+  },
+  {
+    name: "Vikramaditya Rathore",
+    trip: "Traveled to Varanasi",
+    quote: "“The private dawn boat tour and evening Ganga Aarti from reserved vantage points were profoundly moving. Flawless cultural curation.”",
+    avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&h=120&fit=crop&crop=face",
+    stars: "★★★★★",
+    badge: "Verified Traveler",
+  },
+  {
+    name: "Neha & Siddharth",
+    trip: "Traveled to Bali",
+    quote: "“Our dream honeymoon come true. The private cliffside dinner in Uluwatu was something we will cherish for the rest of our lives.”",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&crop=face",
+    stars: "★★★★★",
+    badge: "Verified Traveler",
   },
 ];
 
 export default function TravellerStories() {
-  const rowRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isHoveredRef = useRef(false);
+
+  // Duplicated for infinite continuous loop
+  const doubledTestimonials = [...testimonials, ...testimonials];
+
+  // Continuous infinite glide ticker
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let animId: number;
+    const speed = 0.75; // Pixels per frame
+
+    const step = () => {
+      if (track && !isHoveredRef.current) {
+        track.scrollLeft += speed;
+        const halfWidth = track.scrollWidth / 2;
+        if (track.scrollLeft >= halfWidth) {
+          track.scrollLeft -= halfWidth;
+        }
+      }
+      animId = requestAnimationFrame(step);
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, []);
 
   const scrollLeft = () => {
-    rowRef.current?.scrollBy({ left: -320, behavior: "smooth" });
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -360, behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    rowRef.current?.scrollBy({ left: 320, behavior: "smooth" });
+    const el = trackRef.current;
+    if (!el) return;
+    el.scrollBy({ left: 360, behavior: "smooth" });
   };
 
   return (
@@ -58,7 +117,7 @@ export default function TravellerStories() {
       </div>
 
       <div className="container">
-        <div className="stories-split-layout">
+        <div className="stories-split-layout rv">
           {/* Left Column: Title & Slider Controls */}
           <div className="stories-left-header">
             <span className="section-eyebrow">TRAVELLER STORIES</span>
@@ -67,38 +126,93 @@ export default function TravellerStories() {
               <br />
               Inspire Us
             </h2>
+            <p
+              style={{
+                fontSize: "14px",
+                color: "var(--text-body)",
+                lineHeight: 1.6,
+                marginBottom: "20px",
+              }}
+            >
+              Real stories and candid memories from travelers who explored the world with us.
+            </p>
             <div className="slider-arrow-btns">
-              <button className="nav-arrow-btn" aria-label="Previous" onClick={scrollLeft}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <button
+                className="nav-arrow-btn"
+                aria-label="Previous Review"
+                title="Previous"
+                onClick={scrollLeft}
+                type="button"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <polyline points="15 18 9 12 15 6" />
                 </svg>
               </button>
-              <button className="nav-arrow-btn" aria-label="Next" onClick={scrollRight}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <button
+                className="nav-arrow-btn"
+                aria-label="Next Review"
+                title="Next"
+                onClick={scrollRight}
+                type="button"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </button>
             </div>
           </div>
 
-          {/* Right: 3 Testimonial Cards */}
-          <div className="stories-cards-row" id="reviewCardsRow" ref={rowRef}>
-            {testimonials.map((t) => (
-              <div key={t.name} className="story-card-box">
-                <div className="story-quote-symbol">“</div>
-                <p className="story-quote-text">{t.quote}</p>
-                <div className="story-user-row">
-                  <div className="story-user-avatar">
-                    <img src={t.avatar} alt={t.name} loading="lazy" />
+          {/* Right: Infinite Spinning Testimonial Carousel */}
+          <div
+            className="stories-infinite-wrap rv delay-1"
+            onMouseEnter={() => {
+              isHoveredRef.current = true;
+            }}
+            onMouseLeave={() => {
+              isHoveredRef.current = false;
+            }}
+          >
+            <div
+              className="stories-cards-infinite-track"
+              id="reviewCardsInfiniteTrack"
+              ref={trackRef}
+            >
+              {doubledTestimonials.map((t, idx) => (
+                <div key={`${t.name}-${idx}`} className="story-card-box">
+                  <div>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+                      <div className="story-quote-symbol">“</div>
+                      <div className="story-user-stars" style={{ letterSpacing: 2 }}>{t.stars}</div>
+                    </div>
+                    <p className="story-quote-text">{t.quote}</p>
                   </div>
-                  <div className="story-user-meta">
-                    <h4 className="story-user-name">{t.name}</h4>
-                    <p className="story-user-trip">{t.trip}</p>
-                    <div className="story-user-stars">{t.stars}</div>
+
+                  <div className="story-user-row">
+                    <div className="story-user-avatar">
+                      <img src={t.avatar} alt={t.name} loading="lazy" />
+                    </div>
+                    <div className="story-user-meta">
+                      <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                        <h4 className="story-user-name">{t.name}</h4>
+                        <span
+                          style={{
+                            fontSize: "10.5px",
+                            padding: "1px 6px",
+                            background: "rgba(142, 95, 50, 0.1)",
+                            color: "var(--brand-ochre)",
+                            borderRadius: "999px",
+                            fontWeight: 600,
+                          }}
+                        >
+                          Verified
+                        </span>
+                      </div>
+                      <p className="story-user-trip">{t.trip}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

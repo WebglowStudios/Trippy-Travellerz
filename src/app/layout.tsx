@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 
 import { AuthProvider } from "@/context/AuthContext";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import ProgressBar from "@/components/ui/ProgressBar";
 
 export default function RootLayout({
   children,
@@ -29,6 +31,8 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ProgressBar />
+        <ScrollReveal />
         <AuthProvider>
           {children}
           <ScrollToTop />

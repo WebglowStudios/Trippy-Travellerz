@@ -45,7 +45,7 @@ export default function NewsletterBanner() {
       <div className="newsletter-warm-overlay" />
 
       <div className="container">
-        <div className="newsletter-inner-content">
+        <div className="newsletter-inner-content rv">
           <span className="newsletter-eyebrow">LET&apos;S STAY IN TOUCH</span>
           <h2 className="newsletter-title">Get Travel Inspiration in Your Inbox</h2>
           <p className="newsletter-desc">

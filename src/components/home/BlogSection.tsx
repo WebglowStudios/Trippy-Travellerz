@@ -32,7 +32,7 @@ export default function BlogSection() {
   return (
     <section className="travel-blog-section" id="blog">
       <div className="container">
-        <div className="section-head-row">
+        <div className="section-head-row rv">
           <div>
             <span className="section-eyebrow">TRAVEL BLOG</span>
             <h2 className="section-h2">
@@ -53,7 +53,7 @@ export default function BlogSection() {
         </div>
 
         {/* 3 Blog Cards Grid */}
-        <div className="blog-cards-grid">
+        <div className="blog-cards-grid rv delay-1">
           {articlesList.map((art) => (
             <Link
               key={art.slug}
