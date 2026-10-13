@@ -36,6 +36,13 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
   const reviewCount = pkg?.reviewCount || 312;
 
   const handleBookNow = () => {
+    if (pkg?.isGroupTour) {
+      const grid = document.querySelector(".departure-grid-container");
+      if (grid) {
+        grid.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
     router.push(`/book/${slug}`);
   };
 

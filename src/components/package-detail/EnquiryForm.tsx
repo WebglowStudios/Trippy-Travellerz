@@ -11,6 +11,9 @@ interface EnquiryFormProps {
   destinationName?: string;
   isModal?: boolean;
   isOpen?: boolean;
+  isGroupTour?: boolean;
+  departures?: any[];
+  selectedDepartureId?: string;
   onClose?: () => void;
 }
 
@@ -20,10 +23,14 @@ export default function EnquiryForm({
   destinationName = "",
   isModal = false,
   isOpen = false,
+  isGroupTour = false,
+  departures = [],
+  selectedDepartureId = "",
   onClose,
 }: EnquiryFormProps) {
   const { user } = useAuth();
 
+  const [departureId, setDepartureId] = useState(selectedDepartureId || "");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -32,6 +39,17 @@ export default function EnquiryForm({
     guests: "2 Adults (Couple)",
     message: "",
   });
+
+  // Sync selectedDepartureId prop with local state and auto-fill travelDate
+  useEffect(() => {
+    if (selectedDepartureId) {
+      setDepartureId(selectedDepartureId);
+      const dep = departures.find((d) => String(d._id) === selectedDepartureId);
+      if (dep?.startDate) {
+        setFormData((prev) => ({ ...prev, travelDate: dep.startDate.split("T")[0] }));
+      }
+    }
+  }, [selectedDepartureId, departures]);
 
   useEffect(() => {
     if (user) {
@@ -52,6 +70,17 @@ export default function EnquiryForm({
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleDepartureChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const depId = e.target.value;
+    setDepartureId(depId);
+    if (depId) {
+      const dep = departures.find((d) => String(d._id) === depId);
+      if (dep?.startDate) {
+        setFormData((prev) => ({ ...prev, travelDate: dep.startDate.split("T")[0] }));
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone || !formData.email) {
@@ -68,6 +97,7 @@ export default function EnquiryForm({
 
     const combinedMessage = [
       formData.message,
+      departureId ? `Departure Batch ID: ${departureId}` : "",
       formData.travelDate ? `Tentative Date: ${formData.travelDate}` : "",
       formData.guests ? `Guests: ${formData.guests}` : "",
       destinationName ? `Destination: ${destinationName}` : "",
@@ -82,6 +112,7 @@ export default function EnquiryForm({
         message: combinedMessage,
         packageName,
         package: packageId,
+        departureId: departureId || undefined,
         brand: "trippy-travellerz",
       });
 
@@ -218,16 +249,46 @@ export default function EnquiryForm({
             />
           </div>
 
-          <div className="enq-input-group">
-            <label className="enq-label">Tentative Travel Month / Date</label>
-            <input
-              type="date"
-              name="travelDate"
-              className="enq-input"
-              value={formData.travelDate}
-              onChange={handleChange}
-            />
-          </div>
+          {departures.length > 0 ? (
+            <div className="enq-input-group">
+              <label className="enq-label">Select Group Departure Batch</label>
+              <select
+                value={departureId}
+                onChange={handleDepartureChange}
+                className="enq-input"
+                style={{ cursor: "pointer" }}
+              >
+                <option value="">Choose a Scheduled Batch</option>
+                {departures
+                  .filter((d) => d.startDate)
+                  .map((dep) => {
+                    const dateFormatted = new Date(dep.startDate).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    });
+                    const priceStr = dep.price ? ` — ₹${dep.price.toLocaleString("en-IN")}` : "";
+                    const slotsStr = dep.totalSlots ? ` (${dep.totalSlots - (dep.bookedSlots || 0)} slots left)` : "";
+                    return (
+                      <option key={dep._id} value={dep._id}>
+                        {dateFormatted}{priceStr}{slotsStr}
+                      </option>
+                    );
+                  })}
+              </select>
+            </div>
+          ) : (
+            <div className="enq-input-group">
+              <label className="enq-label">Tentative Travel Month / Date</label>
+              <input
+                type="date"
+                name="travelDate"
+                className="enq-input"
+                value={formData.travelDate}
+                onChange={handleChange}
+              />
+            </div>
+          )}
 
           <div className="enq-input-group">
             <label className="enq-label">Number of Guests</label>

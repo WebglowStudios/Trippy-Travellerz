@@ -10,6 +10,8 @@ import DestinationHighlights from "@/components/destination-detail/DestinationHi
 import DestinationPackagesSection from "@/components/destination-detail/DestinationPackagesSection";
 import DestinationTravelGuide from "@/components/destination-detail/DestinationTravelGuide";
 import DestinationPhotoMosaic from "@/components/destination-detail/DestinationPhotoMosaic";
+import GroupDeal from "@/components/destination-detail/GroupDeal";
+import DestinationArticles from "@/components/destination-detail/DestinationArticles";
 import CustomItineraryBanner from "@/components/packages/CustomItineraryBanner";
 import EnquiryForm from "@/components/package-detail/EnquiryForm";
 import { api } from "@/lib/api";
@@ -105,6 +107,7 @@ function DestinationDetailInner() {
               isGroupTour: Boolean(p.isGroupTour),
               isInternational: Boolean(p.isInternational),
               category: p.category,
+              hotelRating: p.hotelRating,
             }));
           }
         } catch {
@@ -151,6 +154,7 @@ function DestinationDetailInner() {
                 isGroupTour: p.isGroupTour,
                 isInternational: p.isInternational,
                 category: p.category,
+                hotelRating: p.hotelRating,
               }));
               pkgList.push(...matched);
             }
@@ -237,16 +241,28 @@ function DestinationDetailInner() {
           onOpenEnquiry={() => setEnquiryModalOpen(true)}
         />
 
-        {/* 4. Practical Travel Designer Guide & Mascot Tip */}
+        {/* 4. Bespoke Group Travel Deal & Quote */}
+        <GroupDeal
+          destinationName={destination.name}
+          onOpenEnquiry={() => setEnquiryModalOpen(true)}
+        />
+
+        {/* 5. Practical Travel Designer Guide & Mascot Tip */}
         <DestinationTravelGuide
           destination={destination}
           onOpenEnquiry={() => setEnquiryModalOpen(true)}
         />
 
-        {/* 5. 4-Photo Visual Mosaic Gallery */}
+        {/* 6. 4-Photo Visual Mosaic Gallery */}
         <DestinationPhotoMosaic destination={destination} />
 
-        {/* 6. Tailored Bespoke Concierge Banner */}
+        {/* 7. Travel Journal & Destination Stories */}
+        <DestinationArticles
+          destinationName={destination.name}
+          destinationId={destination.id}
+        />
+
+        {/* 8. Tailored Bespoke Concierge Banner */}
         <div className="container" style={{ paddingBottom: 60 }}>
           <CustomItineraryBanner onOpenEnquiry={() => setEnquiryModalOpen(true)} />
         </div>

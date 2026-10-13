@@ -11,6 +11,7 @@ import KeyPointsCard from "@/components/package-detail/KeyPointsCard";
 import PackageTabs from "@/components/package-detail/PackageTabs";
 import PriceCard from "@/components/package-detail/PriceCard";
 import EnquiryForm from "@/components/package-detail/EnquiryForm";
+import DepartureGrid from "@/components/package-detail/DepartureGrid";
 import Reviews from "@/components/package-detail/Reviews";
 import SimilarPackages from "@/components/package-detail/SimilarPackages";
 import MobileCtaBar from "@/components/package-detail/MobileCtaBar";
@@ -298,6 +299,17 @@ function TourDetailInner() {
               </div>
             )}
 
+            {/* Group Tour Fixed Departure Batches */}
+            {(pkg.isGroupTour || (pkg.departures && pkg.departures.length > 0)) && (
+              <DepartureGrid
+                departures={pkg.departures || []}
+                originalPrice={pkg.originalPrice || pkg.price}
+                onSelectSlot={(depId) => {
+                  router.push(`/book/${slug}?departureId=${depId}`);
+                }}
+              />
+            )}
+
             {/* 5. The 6 Interactive Tabs (Itinerary, Activities, Flights, Stay, Transfers, Policies) */}
             <PackageTabs pkg={pkg} />
 
@@ -317,6 +329,8 @@ function TourDetailInner() {
               packageName={packageName}
               packageId={pkg._id}
               destinationName={destinationName}
+              isGroupTour={Boolean(pkg.isGroupTour)}
+              departures={pkg.departures}
             />
           </aside>
         </div>
@@ -333,6 +347,8 @@ function TourDetailInner() {
         packageName={packageName}
         packageId={pkg._id}
         destinationName={destinationName}
+        isGroupTour={Boolean(pkg.isGroupTour)}
+        departures={pkg.departures}
         isModal={true}
         isOpen={enquiryModalOpen}
         onClose={() => setEnquiryModalOpen(false)}

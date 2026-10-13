@@ -24,6 +24,7 @@ export interface PackageItem {
   isGroupTour?: boolean;
   isInternational?: boolean;
   category?: string;
+  hotelRating?: string;
 }
 
 interface PackageCatalogCardProps {
