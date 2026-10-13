@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 import { AuthProvider } from "@/context/AuthContext";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -28,7 +29,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <ScrollToTop />
+        </AuthProvider>
       </body>
     </html>
   );

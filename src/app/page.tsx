@@ -10,6 +10,7 @@ import TravellerStories from "@/components/home/TravellerStories";
 import VisaFreeSection from "@/components/home/VisaFreeSection";
 import BlogSection from "@/components/home/BlogSection";
 import NewsletterBanner from "@/components/home/NewsletterBanner";
+import DestinationMarquee from "@/components/home/DestinationMarquee";
 
 export default function HomePage() {
   return (
@@ -23,6 +24,9 @@ export default function HomePage() {
 
         {/* 3. Floating 2-Tier Search Widget & Trust Badges */}
         <SearchWidget />
+
+        {/* Marquee Ticker */}
+        <DestinationMarquee />
 
         {/* 4. Popular Destinations */}
         <PopularDestinations />
