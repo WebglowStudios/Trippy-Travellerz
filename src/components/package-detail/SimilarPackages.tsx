@@ -8,67 +8,61 @@ interface SimilarPackagesProps {
   currentSlug: string;
 }
 
-const FALLBACK_SIMILAR = [
-  {
-    name: "Singapore & Sentosa Island Escape",
-    slug: "singapore-classic-with-universal-studios",
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
-    nights: 5,
-    days: 6,
-    price: 72999,
-    hotel: "4-Star Luxury",
-  },
-  {
-    name: "Japan Cherry Blossom & Heritage Special",
-    slug: "japan-cherry-blossom-season-special",
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
-    nights: 9,
-    days: 10,
-    price: 114999,
-    hotel: "4-Star Deluxe",
-  },
-  {
-    name: "Bali Luxury Honeymoon Private Villa",
-    slug: "bali-luxury-honeymoon-retreat-6n7d",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
-    nights: 6,
-    days: 7,
-    price: 64999,
-    hotel: "5-Star Private Pool",
-  },
-];
+interface SimilarItem {
+  name: string;
+  slug: string;
+  image: string;
+  nights: number;
+  days: number;
+  price: number;
+  hotel: string;
+}
+
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80";
 
 export default function SimilarPackages({ currentSlug }: SimilarPackagesProps) {
-  const [packages, setPackages] = useState(FALLBACK_SIMILAR);
+  const [packages, setPackages] = useState<SimilarItem[]>([]);
 
   useEffect(() => {
     async function loadSimilar() {
       try {
+        let list: any[] = [];
         const res = await api.get("/packages/featured");
-        if (res.status === "success" && res.data && res.data.length > 0) {
-          const filtered = res.data
-            .filter((p: any) => p.slug !== currentSlug)
-            .slice(0, 3)
-            .map((p: any) => ({
-              name: p.name,
-              slug: p.slug,
-              image: p.heroImage || p.images?.[0] || FALLBACK_SIMILAR[0].image,
-              nights: p.duration?.nights || 5,
-              days: p.duration?.days || 6,
-              price: p.price || 50000,
-              hotel: p.hotelRating || "5-Star Luxury",
-            }));
-
-          if (filtered.length > 0) {
-            setPackages(filtered);
+        if (res.status === "success" && Array.isArray(res.data) && res.data.length > 0) {
+          list = res.data;
+        } else {
+          const allRes = await api.get("/packages?limit=8");
+          if (allRes.status === "success" && Array.isArray(allRes.data)) {
+            list = allRes.data;
           }
         }
+
+        const filtered = list
+          .filter((p: any) => p.slug !== currentSlug)
+          .slice(0, 3)
+          .map((p: any) => ({
+            name: p.name,
+            slug: p.slug,
+            image: p.heroImage || p.images?.[0] || DEFAULT_IMAGE,
+            nights: p.duration?.nights || 5,
+            days: p.duration?.days || 6,
+            price: p.price || 50000,
+            hotel: p.hotelRating || "4-Star Deluxe",
+          }));
+
+        if (filtered.length > 0) {
+          setPackages(filtered);
+        }
       } catch {
-        // Fallback
+        // Quietly fail
       }
     }
     loadSimilar();
   }, [currentSlug]);
+
+  if (packages.length === 0) {
+    return null;
+  }
 
   return (
     <section className="similar-packages-section">

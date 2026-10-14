@@ -82,8 +82,8 @@ export const ARTICLES_DATA: Article[] = [
         "Opt for sunset dinners in the desert between October and April for pleasant 22°C evenings."
       ]
     },
-    relatedPackageSlug: "dubai-luxury-escape-burj-khalifa-desert-safari",
-    relatedPackageTitle: "Dubai Luxury Escape: Burj Khalifa & Private Desert Safari"
+    relatedPackageSlug: "the-dubai-diaries",
+    relatedPackageTitle: "The Dubai Diaries: City Lights & Desert Adventures"
   },
   {
     slug: "bali-secret-waterfalls-and-clifftop-villas",
@@ -135,8 +135,8 @@ export const ARTICLES_DATA: Article[] = [
         "Pre-book private fast-boat transfers if visiting Nusa Penida or the Gili Islands."
       ]
     },
-    relatedPackageSlug: "bali-tropical-paradise-ubud-seminyak",
-    relatedPackageTitle: "Bali Tropical Paradise: Ubud Villas & Seminyak Coast"
+    relatedPackageSlug: "bali",
+    relatedPackageTitle: "Bali Honeymoon: Tropical Villas & Beach Retreat"
   },
   {
     slug: "maldives-overwater-villas-guide",

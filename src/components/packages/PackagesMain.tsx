@@ -9,7 +9,6 @@ import PackagesToolbar from "./PackagesToolbar";
 import PackageCatalogCard, { PackageItem } from "./PackageCatalogCard";
 import CustomItineraryBanner from "./CustomItineraryBanner";
 import EnquiryForm from "@/components/package-detail/EnquiryForm";
-import { DUBAI_SHOWCASE_PACKAGE } from "@/lib/showcase-packages";
 
 const CATEGORY_DEFINITIONS = [
   { id: "luxury", label: "Luxury & 5★", icon: "diamond" },
@@ -20,146 +19,12 @@ const CATEGORY_DEFINITIONS = [
   { id: "family", label: "Family & Group", icon: "groups" },
 ];
 
-const INITIAL_FALLBACK_PACKAGES: PackageItem[] = [
-  DUBAI_SHOWCASE_PACKAGE as any,
-  {
-    _id: "bali-luxury-honeymoon-retreat-6n7d",
-    name: "Bali Luxury Honeymoon — Private Pool Villa & Nusa Penida",
-    slug: "bali-luxury-honeymoon-retreat-6n7d",
-    price: 72999,
-    originalPrice: 95000,
-    priceUnit: "couple",
-    badge: "Most Popular Honeymoon",
-    category: "honeymoon",
-    destination: { name: "Bali", slug: "bali" },
-    duration: { days: 7, nights: 6 },
-    rating: 4.9,
-    reviewCount: 285,
-    flightsIncluded: true,
-    isInternational: true,
-    heroImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
-    shortDescription: "Private cliffside villa with floral pool breakfast, sunrise speedboat to Nusa Penida, and romantic candlelit Jimbaran Bay dinner.",
-    highlights: ["Private Pool Villa in Seminyak & Ubud", "Nusa Penida Kelingking Beach Day Cruise", "Balinese Couples Herbal Spa Therapy"],
-  },
-  {
-    _id: "rajasthan-royal-heritage-tour-jaipur-udaipur-and-jodhpur",
-    name: "Rajasthan Royal Heritage — Jaipur, Udaipur & Jodhpur",
-    slug: "rajasthan-royal-heritage-tour-jaipur-udaipur-and-jodhpur",
-    price: 49999,
-    originalPrice: 65000,
-    priceUnit: "person",
-    badge: "Bestseller",
-    category: "heritage",
-    destination: { name: "India", slug: "india" },
-    duration: { days: 8, nights: 7 },
-    rating: 4.8,
-    reviewCount: 410,
-    flightsIncluded: false,
-    heroImage: "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80",
-    shortDescription: "Stay in restored royal Havelis, explore the Amber Fort on private guided walks, and take sunset boat rides across Lake Pichola.",
-    highlights: ["Palace stays with heritage royal dining", "Lake Pichola private boat cruise", "Private chauffeur throughout"],
-  },
-  {
-    _id: "kerala-backwaters-and-ayurveda-retreat-kochi-alleppey-and-munnar",
-    name: "Kerala Backwaters & Ayurveda Retreat — Kochi, Alleppey & Munnar",
-    slug: "kerala-backwaters-and-ayurveda-retreat-kochi-alleppey-and-munnar",
-    price: 74999,
-    originalPrice: 89000,
-    priceUnit: "couple",
-    badge: "Honeymoon Special",
-    category: "honeymoon",
-    destination: { name: "India", slug: "india" },
-    duration: { days: 7, nights: 6 },
-    rating: 4.7,
-    reviewCount: 310,
-    heroImage: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80",
-    shortDescription: "Private overnight cruise on a luxury AC houseboat through Alleppey backwaters with personal chef, Ayurvedic spa treatments, and Munnar tea mist.",
-    highlights: ["Private luxury houseboat cruise with personal chef", "Full-day authentic Ayurveda rejuvenation", "Munnar tea plantation trek"],
-  },
-  {
-    _id: "maldives-overwater-bungalow-experience",
-    name: "Maldives All-Inclusive Overwater Villa Sanctuary",
-    slug: "maldives-overwater-bungalow-experience",
-    price: 119999,
-    originalPrice: 155000,
-    priceUnit: "couple",
-    badge: "All-Inclusive",
-    category: "luxury",
-    destination: { name: "Maldives", slug: "maldives" },
-    duration: { days: 5, nights: 4 },
-    rating: 4.9,
-    reviewCount: 198,
-    flightsIncluded: true,
-    isInternational: true,
-    heroImage: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80",
-    shortDescription: "Direct lagoon access from your private overwater sundeck, seaplane transfers across turquoise atolls, and sunset champagne catamaran sails.",
-    highlights: ["Overwater villa with plunge pool", "Return scenic seaplane transfers", "All-inclusive gourmet dining & beverage package"],
-  },
-  {
-    _id: "japan-cherry-blossom-season-special",
-    name: "Japan Grand Odyssey — Tokyo, Kyoto & Mount Fuji",
-    slug: "japan-cherry-blossom-season-special",
-    price: 114999,
-    originalPrice: 145000,
-    priceUnit: "person",
-    badge: "New",
-    category: "luxury",
-    destination: { name: "Japan", slug: "japan" },
-    duration: { days: 9, nights: 8 },
-    rating: 4.9,
-    reviewCount: 156,
-    flightsIncluded: true,
-    isInternational: true,
-    heroImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80",
-    shortDescription: "Shinkansen bullet train journeys, private tea ceremony in Kyoto, luxury ryokan onsen stay with views of Mount Fuji, and neon Tokyo tours.",
-    highlights: ["7-Day JR Shinkansen Green Pass", "Luxury Hakone Onsen Ryokan stay", "Kyoto bamboo forest & geisha quarter walk"],
-  },
-  {
-    _id: "bangkok-and-phuket-beach-holiday",
-    name: "Thailand Island Explorer — Bangkok, Phuket & Phi Phi",
-    slug: "bangkok-and-phuket-beach-holiday",
-    price: 54999,
-    originalPrice: 69990,
-    priceUnit: "person",
-    badge: "Bestseller",
-    category: "adventure",
-    destination: { name: "Thailand", slug: "thailand" },
-    duration: { days: 6, nights: 5 },
-    rating: 4.8,
-    reviewCount: 380,
-    flightsIncluded: true,
-    isInternational: true,
-    heroImage: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
-    shortDescription: "Rooftop lounges in vibrant Bangkok, private longtail boat to Maya Bay, and sunset beachfront resort cocktails in Phuket.",
-    highlights: ["Speedboat charter to Phi Phi & Bamboo Island", "Chao Phraya luxury dinner cruise", "Private transfers throughout"],
-  },
-  {
-    _id: "singapore-classic-with-universal-studios",
-    name: "Singapore Skyline & Sentosa Island Luxury Escape",
-    slug: "singapore-classic-with-universal-studios",
-    price: 72999,
-    originalPrice: 88000,
-    priceUnit: "person",
-    badge: "Popular",
-    category: "family",
-    destination: { name: "Singapore", slug: "singapore" },
-    duration: { days: 5, nights: 4 },
-    rating: 4.8,
-    reviewCount: 290,
-    flightsIncluded: true,
-    isInternational: true,
-    heroImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
-    shortDescription: "Marina Bay Sands SkyPark panoramic access, Gardens by the Bay flower dome, and VIP entry to Universal Studios Singapore.",
-    highlights: ["Marina Bay Sands SkyPark pass", "Universal Studios Express VIP entry", "Night Safari tram with animal encounters"],
-  },
-];
-
 export default function PackagesMain() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   // Primary Data States
-  const [packages, setPackages] = useState<PackageItem[]>(INITIAL_FALLBACK_PACKAGES);
+  const [packages, setPackages] = useState<PackageItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [destinationsList, setDestinationsList] = useState<{ id: string; name: string; count: number }[]>([]);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -214,12 +79,7 @@ export default function PackagesMain() {
           }));
         }
 
-        // Merge backend packages with initial showcase packages (deduping by slug)
-        const combinedMap = new Map<string, PackageItem>();
-        INITIAL_FALLBACK_PACKAGES.forEach((item) => combinedMap.set(item.slug, item));
-        fetchedList.forEach((item) => combinedMap.set(item.slug, item));
-
-        const finalPackages = Array.from(combinedMap.values());
+        const finalPackages = fetchedList;
         setPackages(finalPackages);
 
         // Fetch Destinations for dynamic filter counts

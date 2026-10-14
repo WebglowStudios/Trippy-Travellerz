@@ -15,7 +15,6 @@ import DepartureGrid from "@/components/package-detail/DepartureGrid";
 import Reviews from "@/components/package-detail/Reviews";
 import SimilarPackages from "@/components/package-detail/SimilarPackages";
 import MobileCtaBar from "@/components/package-detail/MobileCtaBar";
-import { DUBAI_SHOWCASE_PACKAGE } from "@/lib/showcase-packages";
 
 function cleanItemText(raw: string): string {
   if (!raw) return "";
@@ -128,17 +127,11 @@ function TourDetailInner() {
             }));
           }
           setPkg(data);
-        } else if (slug.includes("dubai") || slug === "dubai-luxury-escape-burj-khalifa-desert-safari") {
-          setPkg(DUBAI_SHOWCASE_PACKAGE);
         } else {
           setNotFound(true);
         }
       } catch {
-        if (slug.includes("dubai") || slug === "dubai-luxury-escape-burj-khalifa-desert-safari") {
-          setPkg(DUBAI_SHOWCASE_PACKAGE);
-        } else {
-          setNotFound(true);
-        }
+        setNotFound(true);
       } finally {
         setLoading(false);
       }

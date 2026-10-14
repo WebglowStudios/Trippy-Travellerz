@@ -8,7 +8,6 @@ import { useAuth } from "@/hooks/useAuth";
 import { openRazorpayCheckout } from "@/lib/razorpay";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { DUBAI_SHOWCASE_PACKAGE } from "@/lib/showcase-packages";
 
 interface PackageData {
   _id: string;
@@ -138,9 +137,6 @@ function BookingCheckoutContent() {
           // Fallback check
         }
 
-        if (!fetchedPkg && (slug.includes("dubai") || slug === "dubai-luxury-escape-burj-khalifa-desert-safari")) {
-          fetchedPkg = DUBAI_SHOWCASE_PACKAGE as any;
-        }
 
         if (fetchedPkg) {
           setPkg(fetchedPkg);
@@ -1033,7 +1029,7 @@ function BookingCheckoutContent() {
               {/* Package Snapshot */}
               <div style={{ display: "flex", gap: 14, marginBottom: 18, borderBottom: "1px solid var(--border-light)", paddingBottom: 18 }}>
                 <img
-                  src={pkg.heroImage || pkg.images?.[0] || DUBAI_SHOWCASE_PACKAGE.heroImage}
+                  src={pkg.heroImage || pkg.images?.[0] || "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"}
                   alt={pkg.name}
                   style={{ width: 84, height: 84, borderRadius: 14, objectFit: "cover", flexShrink: 0 }}
                 />

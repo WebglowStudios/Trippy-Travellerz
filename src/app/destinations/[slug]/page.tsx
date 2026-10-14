@@ -17,7 +17,6 @@ import EnquiryForm from "@/components/package-detail/EnquiryForm";
 import { api } from "@/lib/api";
 import { SHOWCASE_DESTINATIONS, ShowcaseDestination } from "@/lib/showcase-destinations";
 import { PackageItem } from "@/components/packages/PackageCatalogCard";
-import { DUBAI_SHOWCASE_PACKAGE } from "@/lib/showcase-packages";
 
 function DestinationDetailInner() {
   const params = useParams();
@@ -112,13 +111,6 @@ function DestinationDetailInner() {
           }
         } catch {
           // Fallback
-        }
-
-        // Add showcase packages matching this destination
-        if (slug.includes("dubai")) {
-          if (!pkgList.some((p) => p.slug === DUBAI_SHOWCASE_PACKAGE.slug)) {
-            pkgList.unshift(DUBAI_SHOWCASE_PACKAGE as any);
-          }
         }
 
         // If package list is still empty, fetch general packages and match by name/slug

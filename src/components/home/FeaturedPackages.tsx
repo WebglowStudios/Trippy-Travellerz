@@ -18,115 +18,12 @@ interface PackageCardItem {
   reviewCount: number;
 }
 
-const fallbackPackages: PackageCardItem[] = [
-  {
-    id: "dubai-luxury",
-    name: "Dubai Luxury Escape",
-    slug: "dubai-luxury-escape-burj-khalifa-desert-safari",
-    subtitle: "Burj Khalifa • Safari • Atlantis 5★",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80&auto=format&fit=crop",
-    badge: "Luxury 5★",
-    badgeType: "bestseller",
-    durationDays: 8,
-    price: 124999,
-    rating: 4.9,
-    reviewCount: 312,
-  },
-  {
-    id: "kashmir-winter",
-    name: "Kashmir Winter Escape",
-    slug: "kashmir-winter-escape",
-    subtitle: "Srinagar • Gulmarg • Pahalgam",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&q=80&auto=format&fit=crop",
-    badge: "Bestseller",
-    badgeType: "bestseller",
-    durationDays: 6,
-    price: 24999,
-    rating: 4.8,
-    reviewCount: 420,
-  },
-  {
-    id: "spiritual-varanasi",
-    name: "Spiritual Varanasi",
-    slug: "spiritual-varanasi",
-    subtitle: "Varanasi • Sarnath • Prayagraj",
-    image: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=800&q=80&auto=format&fit=crop",
-    badge: "Most Popular",
-    badgeType: "most-popular",
-    durationDays: 4,
-    price: 12999,
-    rating: 4.7,
-    reviewCount: 310,
-  },
-  {
-    id: "kerala-backwaters",
-    name: "Kerala Backwaters & Houseboat",
-    slug: "kerala-backwaters",
-    subtitle: "Munnar • Alleppey • Thekkady",
-    image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800&q=80&auto=format&fit=crop",
-    badge: "New",
-    badgeType: "new",
-    durationDays: 5,
-    price: 18999,
-    rating: 4.8,
-    reviewCount: 280,
-  },
-  {
-    id: "ladakh-odyssey",
-    name: "Ladakh High Mountain Odyssey",
-    slug: "ladakh-high-passes-odyssey",
-    subtitle: "Pangong Lake • Khardung La • Nubra",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop",
-    badge: "Adventure",
-    badgeType: "adventure",
-    durationDays: 7,
-    price: 34999,
-    rating: 4.9,
-    reviewCount: 195,
-  },
-  {
-    id: "andaman-islands",
-    name: "Andaman Tropical Coral Escape",
-    slug: "andaman-tropical-coral-escape",
-    subtitle: "Havelock • Radhanagar • Scuba Dive",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format&fit=crop",
-    badge: "Island Bliss",
-    badgeType: "bestseller",
-    durationDays: 6,
-    price: 38999,
-    rating: 4.9,
-    reviewCount: 240,
-  },
-  {
-    id: "rajasthan-heritage",
-    name: "Royal Rajasthan Palace Trail",
-    slug: "royal-rajasthan-palace-trail",
-    subtitle: "Jaipur • Udaipur Lake Palace • Jodhpur",
-    image: "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80&auto=format&fit=crop",
-    badge: "Heritage 5★",
-    badgeType: "most-popular",
-    durationDays: 7,
-    price: 42999,
-    rating: 4.8,
-    reviewCount: 360,
-  },
-  {
-    id: "bali-retreat",
-    name: "Bali Private Pool Villa Retreat",
-    slug: "bali-private-pool-villa-retreat",
-    subtitle: "Seminyak • Ubud Rice Terraces • Nusa Penida",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80&auto=format&fit=crop",
-    badge: "Romantic",
-    badgeType: "bestseller",
-    durationDays: 6,
-    price: 68999,
-    rating: 4.9,
-    reviewCount: 275,
-  },
-];
+const DEFAULT_FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop";
 
 export default function FeaturedPackages() {
-  const [packages, setPackages] = useState<PackageCardItem[]>(fallbackPackages);
+  const [packages, setPackages] = useState<PackageCardItem[]>([]);
+  const [loading, setLoading] = useState(true);
   const [wishlist, setWishlist] = useState<Record<string, boolean>>({});
   const [activeIndex, setActiveIndex] = useState(0);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -144,7 +41,7 @@ export default function FeaturedPackages() {
               p.shortDescription ||
               p.highlights?.[0] ||
               (p.destination?.name ? `${p.destination.name} Experience` : "Curated Tour"),
-            image: p.heroImage || p.images?.[0] || fallbackPackages[0].image,
+            image: p.heroImage || p.images?.[0] || DEFAULT_FALLBACK_IMAGE,
             badge: p.badge || (p.isFeatured ? "Bestseller" : "Curated"),
             badgeType: (p.badge?.toLowerCase().includes("popular")
               ? "most-popular"
@@ -160,10 +57,13 @@ export default function FeaturedPackages() {
           }));
           setPackages(mapped);
         }
-      } catch {
-        // Fallback to rich static items
+      } catch (err) {
+        console.error("Failed to fetch featured packages:", err);
+      } finally {
+        setLoading(false);
       }
     }
+
     fetchPackages();
   }, []);
 

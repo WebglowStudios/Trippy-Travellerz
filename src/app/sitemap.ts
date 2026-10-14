@@ -46,12 +46,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Curated showcase package pages
   const packages = [
-    "dubai-luxury-escape",
-    "bali-private-villas",
-    "maldives-overwater-retreat",
-    "royal-rajasthan-havelis",
-    "japan-cherry-blossom",
-    "kerala-serene-backwaters",
+    "manali-kasol",
+    "spiti-summer",
+    "delhi-leh-delhi-with-hanle-umlingla-and-demchok-ladakh-trip",
+    "the-dubai-diaries",
+    "bali",
+    "thailand-phuket-krabi",
+    "vietnam-festive-escape-new-year-special",
   ].flatMap((slug) => [
     {
       url: `${baseUrl}/itinerary/${slug}`,
