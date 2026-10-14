@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { api } from "@/lib/api";
 
@@ -64,6 +64,7 @@ const fallbackDestinations: DestinationItem[] = [
 
 export default function PopularDestinations() {
   const [destinations, setDestinations] = useState<DestinationItem[]>(fallbackDestinations);
+  const [activeIndex, setActiveIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
   const isHoveredRef = useRef(false);
 
@@ -87,44 +88,71 @@ export default function PopularDestinations() {
     fetchDestinations();
   }, []);
 
-  // Continuous infinite gliding loop
+  const getCardStep = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return 300;
+    const firstCard = el.querySelector(".dest-card-box") as HTMLElement | null;
+    if (firstCard) {
+      const cardWidth = firstCard.offsetWidth;
+      const computedStyle = window.getComputedStyle(el);
+      const gap = parseFloat(computedStyle.gap || computedStyle.columnGap) || 20;
+      return cardWidth + gap;
+    }
+    return 300;
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const step = getCardStep();
+    const newIndex = Math.round(el.scrollLeft / step);
+    setActiveIndex(Math.min(destinations.length - 1, Math.max(0, newIndex)));
+  }, [destinations.length, getCardStep]);
+
+  const scrollNext = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const step = getCardStep();
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (el.scrollLeft >= maxScroll - 25) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      const currentIndex = Math.round(el.scrollLeft / step);
+      const targetScroll = Math.min(maxScroll, (currentIndex + 1) * step);
+      el.scrollTo({ left: targetScroll, behavior: "smooth" });
+    }
+  }, [getCardStep]);
+
+  const scrollPrev = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const step = getCardStep();
+    if (el.scrollLeft <= 25) {
+      el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
+    } else {
+      const currentIndex = Math.round(el.scrollLeft / step);
+      const targetScroll = Math.max(0, (currentIndex - 1) * step);
+      el.scrollTo({ left: targetScroll, behavior: "smooth" });
+    }
+  }, [getCardStep]);
+
+  const scrollToIndex = (index: number) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const step = getCardStep();
+    el.scrollTo({ left: index * step, behavior: "smooth" });
+  };
+
+  // Step-by-step card auto-slide (moves one card at a time with a pause between, pauses on hover)
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    let animId: number;
-    const speed = 0.85; // Pixels per frame
-
-    const step = () => {
-      if (track && !isHoveredRef.current) {
-        track.scrollLeft += speed;
-        // Halfway reset for seamless infinite loop
-        const halfWidth = track.scrollWidth / 2;
-        if (track.scrollLeft >= halfWidth) {
-          track.scrollLeft -= halfWidth;
-        }
+    const timer = setInterval(() => {
+      if (!isHoveredRef.current) {
+        scrollNext();
       }
-      animId = requestAnimationFrame(step);
-    };
+    }, 4000);
 
-    animId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animId);
-  }, [destinations]);
-
-  const scrollLeft = () => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: 300, behavior: "smooth" });
-  };
-
-  // Duplicated for seamless infinite ticker glide
-  const doubledDestinations = [...destinations, ...destinations];
+    return () => clearInterval(timer);
+  }, [scrollNext]);
 
   return (
     <section className="destinations-section" id="destinations">
@@ -149,9 +177,9 @@ export default function PopularDestinations() {
             <div className="slider-arrow-btns">
               <button
                 className="nav-arrow-btn"
-                aria-label="Previous Destinations"
-                title="Previous"
-                onClick={scrollLeft}
+                aria-label="Previous Destination"
+                title="Previous Destination"
+                onClick={scrollPrev}
                 type="button"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -160,9 +188,9 @@ export default function PopularDestinations() {
               </button>
               <button
                 className="nav-arrow-btn"
-                aria-label="Next Destinations"
-                title="Next"
-                onClick={scrollRight}
+                aria-label="Next Destination"
+                title="Next Destination"
+                onClick={scrollNext}
                 type="button"
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -173,7 +201,7 @@ export default function PopularDestinations() {
           </div>
         </div>
 
-        {/* Infinite Spinning Carousel Track with hover pause */}
+        {/* Card-by-Card Destination Carousel with snap & dots */}
         <div
           className="dest-infinite-carousel-wrap rv delay-1"
           onMouseEnter={() => {
@@ -182,13 +210,22 @@ export default function PopularDestinations() {
           onMouseLeave={() => {
             isHoveredRef.current = false;
           }}
+          onTouchStart={() => {
+            isHoveredRef.current = true;
+          }}
+          onTouchEnd={() => {
+            setTimeout(() => {
+              isHoveredRef.current = false;
+            }, 2500);
+          }}
         >
           <div
             className="dest-cards-infinite-track"
             id="destInfiniteTrack"
             ref={trackRef}
+            onScroll={handleScroll}
           >
-            {doubledDestinations.map((dest, i) => (
+            {destinations.map((dest, i) => (
               <Link
                 key={`${dest.slug}-${i}`}
                 href={`/destinations/${dest.slug}`}
@@ -210,6 +247,19 @@ export default function PopularDestinations() {
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+
+          {/* Carousel Dots Navigation */}
+          <div className="carousel-dots-row">
+            {destinations.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`carousel-dot-btn ${idx === activeIndex ? "active" : ""}`}
+                aria-label={`Jump to destination ${idx + 1}`}
+                onClick={() => scrollToIndex(idx)}
+              />
             ))}
           </div>
         </div>

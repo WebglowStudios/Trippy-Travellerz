@@ -139,8 +139,8 @@ export default function PackageCatalogCard({
                 <span>View Itinerary</span>
                 <span className="material-symbols-rounded" style={{ fontSize: 18 }}>arrow_forward</span>
               </Link>
-              <Link href={`/book/${pkg.slug}`} className="btn-pkg-book-now">
-                Book Now
+              <Link href={`/itinerary/${pkg.slug}#enquiry-form`} className="btn-pkg-book-now">
+                Send Enquiry
               </Link>
             </div>
           </div>
@@ -235,8 +235,8 @@ export default function PackageCatalogCard({
           <Link href={`/itinerary/${pkg.slug}`} className="btn-card-details">
             View Details
           </Link>
-          <Link href={`/book/${pkg.slug}`} className="btn-card-book">
-            Book Now
+          <Link href={`/itinerary/${pkg.slug}#enquiry-form`} className="btn-card-book">
+            Send Enquiry
           </Link>
         </div>
       </div>

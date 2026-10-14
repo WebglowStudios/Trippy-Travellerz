@@ -54,7 +54,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       <div className={`nav-drawer ${isOpen ? "open" : ""}`} id="nav-drawer">
         <div className="nav-drawer-header">
           <div className="nav-drawer-brand">
-            <img src="/logo.png" alt="Trippy Travellers" className="nav-drawer-logo" />
+            <img src="/icon.png" alt="Trippy Travellers" className="nav-drawer-logo" />
             <span className="nav-drawer-title">
               Trippy <span className="highlight">Travellers</span>
             </span>

@@ -110,6 +110,13 @@ function BookingCheckoutContent() {
   const [couponError, setCouponError] = useState("");
   const [couponLoading, setCouponLoading] = useState(false);
 
+  // Online checkout is disabled for now (leads via enquiries)
+  useEffect(() => {
+    if (slug) {
+      router.replace(`/itinerary/${slug}#enquiry-form`);
+    }
+  }, [slug, router]);
+
   // Populate user data if logged in
   useEffect(() => {
     if (user) {

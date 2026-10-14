@@ -95,7 +95,7 @@ export default function Header() {
         <div className="container nav-inner">
           {/* Brand Logo */}
           <Link href="/" className="brand-logo">
-            <img src="/logo.png" alt="Trippy Travellers" className="brand-logo-img" />
+            <img src="/icon.png" alt="Trippy Travellers" className="brand-logo-img" />
             <span className="brand-logo-text">
               Trippy <span className="highlight">Travellers</span>
             </span>

@@ -2,13 +2,12 @@
 
 interface MobileCtaBarProps {
   price?: number;
-  onBookNow: () => void;
   onSendEnquiry: () => void;
+  onBookNow?: () => void;
 }
 
 export default function MobileCtaBar({
   price = 124999,
-  onBookNow,
   onSendEnquiry,
 }: MobileCtaBarProps) {
   return (
@@ -23,40 +22,27 @@ export default function MobileCtaBar({
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: 8 }}>
+      <div>
         <button
           type="button"
           onClick={onSendEnquiry}
           style={{
-            padding: "10px 16px",
-            background: "#FFFFFF",
-            color: "var(--brand-brown)",
-            border: "1.5px solid var(--border-warm)",
-            borderRadius: 9999,
-            fontSize: 12.5,
-            fontWeight: 700,
-            cursor: "pointer",
-          }}
-        >
-          Enquiry
-        </button>
-
-        <button
-          type="button"
-          onClick={onBookNow}
-          style={{
-            padding: "10px 20px",
+            padding: "11px 22px",
             background: "var(--brand-brown)",
             color: "#FFFFFF",
             border: "none",
             borderRadius: 9999,
-            fontSize: 12.5,
+            fontSize: 13,
             fontWeight: 700,
             cursor: "pointer",
             boxShadow: "0 4px 14px rgba(88, 55, 30, 0.28)",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
           }}
         >
-          Book Now
+          <span className="material-symbols-rounded" style={{ fontSize: 18 }}>mail</span>
+          <span>Send Enquiry</span>
         </button>
       </div>
     </div>

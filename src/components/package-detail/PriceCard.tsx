@@ -35,17 +35,6 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
   const rating = pkg?.rating || 4.9;
   const reviewCount = pkg?.reviewCount || 312;
 
-  const handleBookNow = () => {
-    if (pkg?.isGroupTour) {
-      const grid = document.querySelector(".departure-grid-container");
-      if (grid) {
-        grid.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
-    }
-    router.push(`/book/${slug}`);
-  };
-
   const handleCallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!callbackPhone) return;
@@ -64,11 +53,6 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
     }
   };
 
-  const handleDownloadPDF = () => {
-    if (typeof window !== "undefined") {
-      window.print();
-    }
-  };
 
   return (
     <div className="price-card">
@@ -128,34 +112,26 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
         </div>
       </div>
 
-      {/* Buttons */}
+      {/* Primary Action Button: Send Enquiry */}
       <button
         type="button"
         className="btn-send-enquiry-main"
-        onClick={handleBookNow}
+        onClick={() => {
+          const el = document.getElementById("enquiry-form");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else if (onOpenEnquiry) {
+            onOpenEnquiry();
+          }
+        }}
         style={{
           background: "var(--brand-brown)",
           color: "#FFFFFF",
           marginBottom: 10,
         }}
       >
-        <span className="material-symbols-rounded" style={{ fontSize: 19 }}>credit_card</span>
-        <span>Confirm & Book This Trip</span>
-      </button>
-
-      <button
-        type="button"
-        className="btn-request-callback"
-        onClick={onOpenEnquiry || (() => document.getElementById("enquiry-form")?.scrollIntoView({ behavior: "smooth" }))}
-        style={{
-          marginBottom: 10,
-          background: "#FFFFFF",
-          color: "var(--brand-brown)",
-          border: "1.5px solid var(--border-warm)",
-        }}
-      >
-        <span className="material-symbols-rounded" style={{ fontSize: 18 }}>mail</span>
-        <span>Send Enquiry / Custom Quote</span>
+        <span className="material-symbols-rounded" style={{ fontSize: 19 }}>mail</span>
+        <span>Send Enquiry / Get Quote</span>
       </button>
 
       <button
@@ -168,15 +144,6 @@ export default function PriceCard({ pkg, slug, onOpenEnquiry }: PriceCardProps) 
         <span>Request a Quick Callback</span>
       </button>
 
-      <button
-        type="button"
-        className="btn-request-callback"
-        onClick={handleDownloadPDF}
-        style={{ fontSize: 12.5 }}
-      >
-        <span className="material-symbols-rounded" style={{ fontSize: 17 }}>picture_as_pdf</span>
-        <span>Download Itinerary (PDF)</span>
-      </button>
 
       {/* Collapsible Quick Callback Form */}
       {showCallback && (

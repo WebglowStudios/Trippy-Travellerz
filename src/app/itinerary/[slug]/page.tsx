@@ -89,6 +89,7 @@ function TourDetailInner() {
   const [pkg, setPkg] = useState<any>(null);
   const [notFound, setNotFound] = useState(false);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
+  const [selectedDepartureId, setSelectedDepartureId] = useState<string>("");
 
   useEffect(() => {
     if (!slug) return;
@@ -387,8 +388,15 @@ function TourDetailInner() {
               <DepartureGrid
                 departures={pkg.departures || []}
                 originalPrice={pkg.originalPrice || pkg.price}
+                selectedDepartureId={selectedDepartureId}
                 onSelectSlot={(depId) => {
-                  router.push(`/book/${slug}?departureId=${depId}`);
+                  setSelectedDepartureId(depId);
+                  const el = document.getElementById("enquiry-form");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    setEnquiryModalOpen(true);
+                  }
                 }}
               />
             )}
@@ -414,6 +422,7 @@ function TourDetailInner() {
               destinationName={destinationName}
               isGroupTour={Boolean(pkg.isGroupTour)}
               departures={pkg.departures}
+              selectedDepartureId={selectedDepartureId}
             />
           </aside>
         </div>
@@ -432,6 +441,7 @@ function TourDetailInner() {
         destinationName={destinationName}
         isGroupTour={Boolean(pkg.isGroupTour)}
         departures={pkg.departures}
+        selectedDepartureId={selectedDepartureId}
         isModal={true}
         isOpen={enquiryModalOpen}
         onClose={() => setEnquiryModalOpen(false)}
@@ -440,8 +450,14 @@ function TourDetailInner() {
       {/* 10. Mobile Sticky Booking Bar */}
       <MobileCtaBar
         price={pkg.price}
-        onBookNow={() => router.push(`/book/${slug}`)}
-        onSendEnquiry={() => setEnquiryModalOpen(true)}
+        onSendEnquiry={() => {
+          const el = document.getElementById("enquiry-form");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          } else {
+            setEnquiryModalOpen(true);
+          }
+        }}
       />
     </>
   );
