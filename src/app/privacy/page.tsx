@@ -108,9 +108,9 @@ export default function PrivacyPage() {
                   color: "var(--text-dark)",
                 }}
               >
-                <strong>Data Privacy Officer — Trippy Travellers</strong>
+                <strong>Data Privacy Officer — Trippy Travelerz</strong>
                 <br />
-                Email: <span style={{ color: "var(--brand-brown)", fontWeight: 600 }}>privacy@trippytravellers.com</span>
+                Email: <span style={{ color: "var(--brand-brown)", fontWeight: 600 }}>privacy@trippytravelerz.com</span>
                 <br />
                 Location: Bengaluru & Pune, India
               </div>

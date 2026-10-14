@@ -128,7 +128,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>Email Inquiries</strong>
-                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>concierge@trippytravellers.com</span>
+                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>concierge@trippytravelerz.com</span>
                   </div>
                 </div>
 

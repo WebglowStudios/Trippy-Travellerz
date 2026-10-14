@@ -998,7 +998,7 @@ function DashboardInner() {
                       <span className="material-symbols-rounded" style={{ fontSize: 50, color: "#F59E0B" }}>rate_review</span>
                       <h3 className="serif" style={{ fontSize: 20, margin: "10px 0 6px" }}>No Reviews Published Yet</h3>
                       <p style={{ fontSize: 14, color: "var(--text-muted)", marginBottom: 20 }}>
-                        Completed a journey with Trippy Travellerz? Share your feedback to help fellow travelers.
+                        Completed a journey with Trippy Travelerz? Share your feedback to help fellow travelers.
                       </p>
                       <button
                         type="button"
@@ -1269,10 +1269,10 @@ function DashboardInner() {
             <div className="dash-voucher-modal" onClick={(e) => e.stopPropagation()}>
               <div className="dash-voucher-header">
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <img src="/logo.png" alt="Trippy Travellers" style={{ width: 36, height: 36 }} />
+                  <img src="/logo.png" alt="Trippy Travelerz" style={{ width: 36, height: 36 }} />
                   <div>
                     <h3 className="serif" style={{ fontSize: 18, margin: 0, fontWeight: 700, color: "var(--brand-brown)" }}>
-                      Trippy Travellerz
+                      Trippy Travelerz
                     </h3>
                     <span style={{ fontSize: 11, color: "var(--text-muted)" }}>Official Reservation Voucher</span>
                   </div>

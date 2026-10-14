@@ -1,4 +1,4 @@
-// Razorpay SDK loader + checkout launcher for Trippy Travellerz
+// Razorpay SDK loader + checkout launcher for Trippy Travelerz
 
 declare global {
   interface Window {

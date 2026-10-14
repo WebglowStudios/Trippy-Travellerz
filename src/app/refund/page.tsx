@@ -69,12 +69,12 @@ export default function RefundPage() {
           <div className="legal-content-card">
             <div className="legal-prose">
               <p>
-                We understand that unexpected life events, medical emergencies, and schedule shifts can occasionally alter travel plans. At <strong>Trippy Travellers</strong>, we strive to offer the maximum flexibility possible while honoring our contractual commitments to independent boutique resorts, private drivers, and luxury aviation providers.
+                We understand that unexpected life events, medical emergencies, and schedule shifts can occasionally alter travel plans. At <strong>Trippy Travelerz</strong>, we strive to offer the maximum flexibility possible while honoring our contractual commitments to independent boutique resorts, private drivers, and luxury aviation providers.
               </p>
 
               <h2>1. Land Package Refund Schedule</h2>
               <p>
-                Cancellations must be communicated in writing via email to <strong>cancellations@trippytravellers.com</strong> or submitted through your Traveler Dashboard. The effective cancellation date is the timestamp when our operations desk receives written notice:
+                Cancellations must be communicated in writing via email to <strong>cancellations@trippytravelerz.com</strong> or submitted through your Traveler Dashboard. The effective cancellation date is the timestamp when our operations desk receives written notice:
               </p>
 
               {/* Responsive Refund Table */}

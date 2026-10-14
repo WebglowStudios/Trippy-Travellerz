@@ -236,7 +236,7 @@ export default function CareersPage() {
                   </div>
 
                   <a
-                    href={`mailto:careers@trippytravellers.com?subject=Application for ${encodeURIComponent(role.title)}`}
+                    href={`mailto:careers@trippytravelerz.com?subject=Application for ${encodeURIComponent(role.title)}`}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -295,12 +295,12 @@ export default function CareersPage() {
               We are always on the lookout for visionary storytellers, UI designers, and regional guides. Send your portfolio and pitch to us.
             </p>
             <a
-              href="mailto:careers@trippytravellers.com?subject=Spontaneous Application — Trippy Travellerz"
+              href="mailto:careers@trippytravelerz.com?subject=Spontaneous Application — Trippy Travelerz"
               className="btn-whatsapp-concierge"
               style={{ display: "inline-flex" }}
             >
               <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--brand-brown)" }}>mail</span>
-              <span>careers@trippytravellers.com</span>
+              <span>careers@trippytravelerz.com</span>
             </a>
           </div>
 

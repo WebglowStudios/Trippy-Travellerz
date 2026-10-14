@@ -153,7 +153,7 @@ export function generateBookingPdf(booking: BookingPdfData): void {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(15);
   doc.setTextColor(...C.white);
-  doc.text("Trippy Travellerz", M, 13);
+  doc.text("Trippy Travelerz", M, 13);
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(8);
@@ -329,8 +329,8 @@ export function generateBookingPdf(booking: BookingPdfData): void {
   const notes = [
     "Please carry a valid government ID or Passport matching the lead traveler name.",
     "Your private travel concierge will reach out 72 hours prior with operational transfers.",
-    "For customized itinerary adjustments or date queries, contact support at concierge@trippytravellerz.com.",
-    "Official digital confirmation generated under Trippy Travellerz reservation terms.",
+    "For customized itinerary adjustments or date queries, contact support at concierge@trippytravelerz.com.",
+    "Official digital confirmation generated under Trippy Travelerz reservation terms.",
   ];
 
   doc.setFont("helvetica", "normal");
@@ -353,13 +353,13 @@ export function generateBookingPdf(booking: BookingPdfData): void {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(7);
   doc.setTextColor(...C.gray);
-  doc.text("Trippy Travellerz  |  concierge@trippytravellerz.com  |  +91 98765 43210", M, footY + 5);
+  doc.text("Trippy Travelerz  |  concierge@trippytravelerz.com  |  +91 98765 43210", M, footY + 5);
   doc.text(`Generated: ${formatShortDate(new Date().toISOString())}`, W - M, footY + 5, { align: "right" });
 
   doc.setFontSize(6.5);
   doc.setTextColor(...C.gray);
   doc.text("System-generated booking voucher & confirmation. No physical signature required.", M, footY + 10);
 
-  const fileName = `TrippyTravellerz_${displayId}.pdf`;
+  const fileName = `TrippyTravelerz_${displayId}.pdf`;
   doc.save(fileName);
 }

@@ -79,7 +79,7 @@ function PayInstallmentInner({ params }: PayInstallmentPageProps) {
         key: details.keyId,
         amount: amountPaise,
         currency: "INR",
-        name: "Trippy Travellerz",
+        name: "Trippy Travelerz",
         description: `${details.packageName || "Tour Booking"} - Balance Settlement`,
         order_id: orderId,
         prefill: {

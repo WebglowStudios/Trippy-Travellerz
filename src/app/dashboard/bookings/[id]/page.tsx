@@ -119,7 +119,7 @@ function BookingDetailInner() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_mockKey",
         amount: order.amount,
         currency: order.currency || "INR",
-        name: "Trippy Travellerz",
+        name: "Trippy Travelerz",
         description: `Installment Payment for ${booking.package?.name || "Curated Journey"}`,
         order_id: order.orderId || order.id,
         prefill: {

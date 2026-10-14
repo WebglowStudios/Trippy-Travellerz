@@ -238,7 +238,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             Plan Your Journey
           </Link>
           <div className="drawer-contact-mini">
-            <span>+91 98765 43210</span> • <span>concierge@trippytravellerz.com</span>
+            <span>+91 98765 43210</span> • <span>concierge@trippytravelerz.com</span>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error("Trippy Travellerz application error:", error);
+    console.error("Trippy Travelerz application error:", error);
   }, [error]);
 
   return (

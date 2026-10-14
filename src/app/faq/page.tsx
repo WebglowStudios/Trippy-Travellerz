@@ -42,7 +42,7 @@ const FAQS_DATA: FAQItem[] = [
     id: "private-vs-group",
     category: "Customization",
     question: "Will I be traveling in a shared group bus or a private vehicle?",
-    answer: "Trippy Travellerz specializes in 100% private travel experiences. You and your travel companions have an exclusive air-conditioned luxury sedan or SUV with a vetted, courteous local chauffeur. You set your own pace without waiting for group tour buses or fixed cattle-drive schedules.",
+    answer: "Trippy Travelerz specializes in 100% private travel experiences. You and your travel companions have an exclusive air-conditioned luxury sedan or SUV with a vetted, courteous local chauffeur. You set your own pace without waiting for group tour buses or fixed cattle-drive schedules.",
   },
   {
     id: "visa-assistance",

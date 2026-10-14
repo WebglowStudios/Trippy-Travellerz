@@ -118,7 +118,7 @@ export default function TermsPage() {
                     Questions about our booking policies?
                   </strong>
                   <span style={{ fontSize: 13, color: "var(--text-body)" }}>
-                    Our legal and operations concierge is available at hello@trippytravellers.com
+                    Our legal and operations concierge is available at hello@trippytravelerz.com
                   </span>
                 </div>
                 <Link
