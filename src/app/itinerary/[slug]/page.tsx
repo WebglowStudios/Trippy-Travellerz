@@ -210,7 +210,17 @@ function TourDetailInner() {
       {/* 1. Header Navigation */}
       <Header />
 
-      <main className="pkg-page-wrap">
+      <main
+        className="pkg-page-wrap"
+        style={{
+          maxWidth: 1420,
+          margin: "0 auto",
+          padding: "36px 32px 80px",
+          boxSizing: "border-box",
+          width: "100%",
+          minWidth: 0,
+        }}
+      >
         {/* 2. Breadcrumb */}
         <nav className="pkg-breadcrumb" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
@@ -235,7 +245,7 @@ function TourDetailInner() {
         {/* 4. Content Grid: Details (Left) vs Sticky Sidebar (Right) */}
         <div className="content-grid">
           {/* LEFT MAIN COLUMN */}
-          <div>
+          <div style={{ minWidth: 0 }}>
             {/* Title & Metadata Badges */}
             <h1 className="pkg-title">{packageName}</h1>
 

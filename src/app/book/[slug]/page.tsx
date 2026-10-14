@@ -550,7 +550,17 @@ function BookingCheckoutContent() {
     <>
       <Header />
 
-      <main className="pkg-page-wrap" style={{ paddingBottom: 80 }}>
+      <main
+        className="pkg-page-wrap"
+        style={{
+          maxWidth: 1420,
+          margin: "0 auto",
+          padding: "36px 32px 80px",
+          boxSizing: "border-box",
+          width: "100%",
+          minWidth: 0,
+        }}
+      >
         {/* Breadcrumb */}
         <nav className="pkg-breadcrumb" aria-label="Breadcrumb">
           <Link href="/">Home</Link>

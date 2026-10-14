@@ -2877,6 +2877,15 @@
    TOUR DETAIL & ITINERARY STYLES
    ========================================================================== */
 
+    .pkg-page-wrap {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: 36px 32px 80px;
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+    }
+
     .pkg-breadcrumb {
       display: flex;
       align-items: center;
@@ -4225,6 +4234,7 @@
     }
 
     @media (max-width: 960px) {
+      .pkg-page-wrap { padding: 24px 20px 60px !important; }
       .content-grid { grid-template-columns: minmax(0, 1fr) !important; }
       .nav-links-list { display: none !important; }
       .nav-hamburger { display: flex !important; }
@@ -4237,6 +4247,7 @@
     }
 
     @media (max-width: 768px) {
+      .pkg-page-wrap { padding: 20px 18px 50px !important; }
       .brand-logo-text { font-size: 22px; }
       .brand-logo-img { width: 38px; height: 38px; }
       .site-header .nav-home-btn { padding: 7px 14px; font-size: 12.5px; }
@@ -4247,7 +4258,7 @@
     }
 
     @media (max-width: 480px) {
-      .pkg-page-wrap { padding-left: 14px; padding-right: 14px; padding-top: 16px; }
+      .pkg-page-wrap { padding: 16px 14px 40px !important; }
       .pkg-gallery { height: 260px !important; }
       .gallery-main { height: 260px !important; }
       .brand-logo-text { font-size: 19px; }
