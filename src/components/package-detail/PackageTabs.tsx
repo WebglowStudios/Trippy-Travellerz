@@ -8,6 +8,69 @@ interface PackageTabsProps {
   onOpenLightbox?: (imgUrl: string) => void;
 }
 
+function cleanItemText(raw: string): string {
+  if (!raw) return "";
+  return String(raw)
+    .replace(/\\u0026amp;/gi, "&")
+    .replace(/\\u0026/gi, "&")
+    .replace(/&amp;/gi, "&")
+    .replace(/\\u003c/gi, "<")
+    .replace(/\\u003e/gi, ">")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\u00a0/g, " ")
+    .replace(/\\r\\n|\\n|\\r/g, " ")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/^[•\-\*\s–—:]+/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function sanitizeList(list: any[]): string[] {
+  if (!Array.isArray(list)) return [];
+  const res: string[] = [];
+  for (const item of list) {
+    if (!item) continue;
+    const parts = String(item).split(/\\r\\n|\\n|\\r|[\r\n]+/);
+    for (const p of parts) {
+      const cleaned = cleanItemText(p);
+      if (cleaned.length > 2) {
+        res.push(cleaned);
+      }
+    }
+  }
+  return Array.from(new Set(res));
+}
+
+function parseBulletPoints(text: string | null | undefined): { isList: boolean; items: string[] } {
+  if (!text) return { isList: false, items: [] };
+
+  const raw = String(text).trim();
+  if (!raw) return { isList: false, items: [] };
+
+  const hasBulletChar = /[•●▪■]/.test(raw);
+  const hasNewlines = raw.includes("\n") || raw.includes("\\n");
+
+  if (!hasBulletChar && !hasNewlines) {
+    return { isList: false, items: [raw] };
+  }
+
+  const parts = raw
+    .split(/(?:\s*[•●▪■]\s*|\\r\\n|\\n|\\r|[\r\n]+)/)
+    .map((s) => cleanItemText(s))
+    .filter((s) => s.length > 2);
+
+  if (parts.length > 1 || (parts.length === 1 && (hasBulletChar || raw.startsWith("•")))) {
+    return { isList: true, items: parts };
+  }
+
+  return { isList: false, items: [raw] };
+}
+
 export default function PackageTabs({ pkg, onOpenLightbox }: PackageTabsProps) {
   const [activeTab, setActiveTab] = useState<"itinerary" | "activities" | "flights" | "stay" | "transfers" | "policies">("itinerary");
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>({ "day-0": true, "stay-0": true, "trans-0": true, "flight-0": true, "pol-0": true });
@@ -23,8 +86,8 @@ export default function PackageTabs({ pkg, onOpenLightbox }: PackageTabsProps) {
   const stays = pkg?.stays || [];
   const transfers = pkg?.transfers || [];
   const flights = pkg?.flights || [];
-  const inclusions = pkg?.inclusions || [];
-  const exclusions = pkg?.exclusions || [];
+  const inclusions = sanitizeList(pkg?.inclusions);
+  const exclusions = sanitizeList(pkg?.exclusions);
   const duration = pkg?.duration || { nights: 7, days: 8 };
   const destinationName = pkg?.destination?.name || pkg?.customDestinationText || "Dubai & UAE";
 
@@ -220,10 +283,30 @@ export default function PackageTabs({ pkg, onOpenLightbox }: PackageTabsProps) {
                           </div>
                         )}
 
-                        {/* Description */}
-                        <p style={{ marginBottom: 14 }}>
-                          {day.description || "Embark on an extraordinary journey exploring the cultural highlights, natural wonders, and bespoke hospitality of this destination."}
-                        </p>
+                        {/* Description / Structured Bullet Points */}
+                        {(() => {
+                          const descText = day.description || "Embark on an extraordinary journey exploring the cultural highlights, natural wonders, and bespoke hospitality of this destination.";
+                          const { isList, items } = parseBulletPoints(descText);
+
+                          if (isList && items.length > 1) {
+                            return (
+                              <ul style={{ display: "flex", flexDirection: "column", gap: 9, margin: "8px 0 16px", padding: 0, listStyle: "none" }}>
+                                {items.map((pt: string, pIdx: number) => (
+                                  <li key={pIdx} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "var(--text-body)", lineHeight: 1.65 }}>
+                                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--brand-ochre)", flexShrink: 0, marginTop: 7 }} />
+                                    <span style={{ flex: 1, minWidth: 0 }}>{pt}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            );
+                          }
+
+                          return (
+                            <p style={{ marginBottom: 14, fontSize: 14.5, lineHeight: 1.7, color: "var(--text-body)" }}>
+                              {items[0] || descText}
+                            </p>
+                          );
+                        })()}
 
                         {/* Day Photo Slider */}
                         {dayImgs.length > 0 && (
@@ -280,9 +363,22 @@ export default function PackageTabs({ pkg, onOpenLightbox }: PackageTabsProps) {
                                 <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--brand-ochre)", flexShrink: 0, marginTop: 7 }} />
                                 <div>
                                   <strong>{typeof act === "string" ? act : act.title}:</strong>
-                                  {typeof act !== "string" && act.description && (
-                                    <span style={{ color: "var(--text-body)" }}> {act.description}</span>
-                                  )}
+                                  {typeof act !== "string" && act.description && (() => {
+                                    const { isList, items } = parseBulletPoints(act.description);
+                                    if (isList && items.length > 1) {
+                                      return (
+                                        <ul style={{ display: "flex", flexDirection: "column", gap: 6, margin: "6px 0 0", padding: 0, listStyle: "none" }}>
+                                          {items.map((pt: string, pIdx: number) => (
+                                            <li key={pIdx} style={{ display: "flex", alignItems: "flex-start", gap: 8, fontSize: 13, color: "var(--text-body)", lineHeight: 1.55 }}>
+                                              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "var(--brand-ochre)", flexShrink: 0, marginTop: 7 }} />
+                                              <span style={{ flex: 1, minWidth: 0 }}>{pt}</span>
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      );
+                                    }
+                                    return <span style={{ color: "var(--text-body)" }}> {items[0] || act.description}</span>;
+                                  })()}
                                 </div>
                               </div>
                             ))}

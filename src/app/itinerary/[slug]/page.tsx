@@ -17,6 +17,69 @@ import SimilarPackages from "@/components/package-detail/SimilarPackages";
 import MobileCtaBar from "@/components/package-detail/MobileCtaBar";
 import { DUBAI_SHOWCASE_PACKAGE } from "@/lib/showcase-packages";
 
+function cleanItemText(raw: string): string {
+  if (!raw) return "";
+  return String(raw)
+    .replace(/\\u0026amp;/gi, "&")
+    .replace(/\\u0026/gi, "&")
+    .replace(/&amp;/gi, "&")
+    .replace(/\\u003c/gi, "<")
+    .replace(/\\u003e/gi, ">")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/\u00a0/g, " ")
+    .replace(/\\r\\n|\\n|\\r/g, " ")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/^[•\-\*\s–—:]+/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function sanitizeList(list: any[]): string[] {
+  if (!Array.isArray(list)) return [];
+  const res: string[] = [];
+  for (const item of list) {
+    if (!item) continue;
+    const parts = String(item).split(/\\r\\n|\\n|\\r|[\r\n]+/);
+    for (const p of parts) {
+      const cleaned = cleanItemText(p);
+      if (cleaned.length > 2) {
+        res.push(cleaned);
+      }
+    }
+  }
+  return Array.from(new Set(res));
+}
+
+function parseBulletPoints(text: string | null | undefined): { isList: boolean; items: string[] } {
+  if (!text) return { isList: false, items: [] };
+
+  const raw = String(text).trim();
+  if (!raw) return { isList: false, items: [] };
+
+  const hasBulletChar = /[•●▪■]/.test(raw);
+  const hasNewlines = raw.includes("\n") || raw.includes("\\n");
+
+  if (!hasBulletChar && !hasNewlines) {
+    return { isList: false, items: [raw] };
+  }
+
+  const parts = raw
+    .split(/(?:\s*[•●▪■]\s*|\\r\\n|\\n|\\r|[\r\n]+)/)
+    .map((s) => cleanItemText(s))
+    .filter((s) => s.length > 2);
+
+  if (parts.length > 1 || (parts.length === 1 && (hasBulletChar || raw.startsWith("•")))) {
+    return { isList: true, items: parts };
+  }
+
+  return { isList: false, items: [raw] };
+}
+
 function TourDetailInner() {
   const router = useRouter();
   const params = useParams();
@@ -197,13 +260,13 @@ function TourDetailInner() {
   const duration = pkg.duration || { nights: 7, days: 8 };
   const rating = pkg.rating || 4.9;
   const reviewCount = pkg.reviewCount || 312;
-  const highlights = pkg.highlights || [
+  const highlights = sanitizeList(pkg.highlights || [
     "Exclusive skip-the-line VIP entry privileges to signature landmarks",
     "Scenic off-road adventures and private sunset experiences with dedicated hosts",
     "Gourmet culinary dining and traditional evening entertainment",
     "Curated boutique 5-star hotel and resort sanctuaries with ocean/skyline views",
     "Private chauffeur-driven luxury transit throughout your stay",
-  ];
+  ]);
 
   return (
     <>
@@ -288,11 +351,28 @@ function TourDetailInner() {
               flightsIncluded={pkg.flightsIncluded}
             />
 
-            {/* Lead Narrative Description */}
-            <p className="pkg-desc-lead">
-              {pkg.description ||
-                "Experience the pinnacle of luxury travel with this meticulously curated journey. Designed for discerning travelers seeking comfort, authentic cultural immersion, and unforgettable moments, every transfer, stay, and excursion is seamlessly orchestrated by our specialist concierges."}
-            </p>
+            {/* Lead Narrative Description / Structured Bullets */}
+            {(() => {
+              const desc = pkg.description || "Experience the pinnacle of luxury travel with this meticulously curated journey. Designed for discerning travelers seeking comfort, authentic cultural immersion, and unforgettable moments, every transfer, stay, and excursion is seamlessly orchestrated by our specialist concierges.";
+              const { isList, items } = parseBulletPoints(desc);
+              if (isList && items.length > 1) {
+                return (
+                  <ul style={{ display: "flex", flexDirection: "column", gap: 10, margin: "14px 0 24px", padding: 0, listStyle: "none" }}>
+                    {items.map((pt: string, pIdx: number) => (
+                      <li key={pIdx} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14.5, color: "var(--text-body)", lineHeight: 1.65 }}>
+                        <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--brand-ochre)", flexShrink: 0, marginTop: 7 }} />
+                        <span style={{ flex: 1, minWidth: 0 }}>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              }
+              return (
+                <p className="pkg-desc-lead">
+                  {items[0] || desc}
+                </p>
+              );
+            })()}
 
             {/* Trip Highlights Box */}
             {highlights.length > 0 && (
