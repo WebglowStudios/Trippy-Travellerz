@@ -81,7 +81,7 @@ const VISA_FREE_COUNTRIES: VisaFreeCountry[] = [
     flightTime: "~1.5 Hours Direct",
     bestSeason: "Dec – Apr",
     currency: "LKR (Sri Lankan Rupee)",
-    image: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1580794749460-76f97b7180d8?w=800&q=80",
     tagline: "Ancient rock fortresses, tea estates, and wild elephant safaris.",
     visaStatus: "Free Visa on Arrival",
     packageCount: 4,

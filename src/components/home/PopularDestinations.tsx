@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { api } from "@/lib/api";
+import { getCuratedDestination, sanitizeDestinationText } from "@/lib/destination-assets";
 
 interface DestinationItem {
   name: string;
@@ -19,10 +20,10 @@ const fallbackDestinations: DestinationItem[] = [
     image: "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&q=80&auto=format&fit=crop",
   },
   {
-    name: "Varanasi",
-    slug: "varanasi",
-    tagline: "Spiritual Ghats & Timeless Rituals",
-    image: "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&q=80&auto=format&fit=crop",
+    name: "Spiti Valley",
+    slug: "spiti",
+    tagline: "Middle Land, Monasteries & Stargazing",
+    image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80&auto=format&fit=crop",
   },
   {
     name: "Kerala",
@@ -71,14 +72,26 @@ export default function PopularDestinations() {
   useEffect(() => {
     async function fetchDestinations() {
       try {
-        const res = await api.get("/destinations?limit=12");
+        const res = await api.get("/destinations?limit=16");
         if (res.status === "success" && res.data && res.data.length > 0) {
-          const mapped = res.data.map((d: any, idx: number) => ({
-            name: d.name,
-            slug: d.slug,
-            tagline: d.shortDescription || d.description || "Breathtaking Escapes",
-            image: d.heroImage || d.images?.[0] || fallbackDestinations[idx % fallbackDestinations.length].image,
-          }));
+          const mapped = res.data
+            .filter((d: any) => d.name && d.name.trim().length > 0)
+            .map((d: any, idx: number) => {
+              const curated = getCuratedDestination(d.slug) || getCuratedDestination(d.name);
+              return {
+                name: curated?.name || d.name,
+                slug: curated?.slug || d.slug,
+                tagline:
+                  curated?.shortDescription ||
+                  sanitizeDestinationText(d.shortDescription || d.description, 75) ||
+                  "Breathtaking Escapes",
+                image:
+                  curated?.heroImage ||
+                  d.heroImage ||
+                  d.images?.[0] ||
+                  fallbackDestinations[idx % fallbackDestinations.length].image,
+              };
+            });
           setDestinations(mapped);
         }
       } catch {

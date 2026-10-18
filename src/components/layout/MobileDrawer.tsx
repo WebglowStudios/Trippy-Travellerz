@@ -54,9 +54,9 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
       <div className={`nav-drawer ${isOpen ? "open" : ""}`} id="nav-drawer">
         <div className="nav-drawer-header">
           <div className="nav-drawer-brand">
-            <img src="/icon.png" alt="Trippy Travellers" className="nav-drawer-logo" />
+            <img src="/icon.png" alt="Trippy Travelerz" className="nav-drawer-logo" />
             <span className="nav-drawer-title">
-              Trippy <span className="highlight">Travellers</span>
+              Trippy <span className="highlight">Travelerz</span>
             </span>
           </div>
           <button className="nav-drawer-close" onClick={onClose} aria-label="Close menu">
@@ -200,7 +200,7 @@ export default function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             About & Care
           </div>
           <Link href="/about" onClick={onClose}>
-            <span className="drawer-icon">🌿</span>Why Trippy Travellers
+            <span className="drawer-icon">🌿</span>Why Trippy Travelerz
           </Link>
           <Link href="/faq" onClick={onClose}>
             <span className="drawer-icon">❓</span>Frequently Asked Questions

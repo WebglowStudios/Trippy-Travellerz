@@ -5,13 +5,13 @@ import Footer from "@/components/layout/Footer";
 import CustomItineraryBanner from "@/components/packages/CustomItineraryBanner";
 
 export const metadata: Metadata = {
-  title: "About Trippy Travellers — Artisanal Luxury Travel & Craftsmanship",
+  title: "About Trippy Travelerz — Artisanal Luxury Travel & Craftsmanship",
   description:
-    "Learn about Trippy Travellers' philosophy, our master travel designers, and our commitment to slow, bespoke, and immersive journeys across the globe.",
+    "Learn about Trippy Travelerz' philosophy, our master travel designers, and our commitment to slow, bespoke, and immersive journeys across the globe.",
   openGraph: {
-    title: "About Trippy Travellers — Artisanal Luxury Travel & Craftsmanship",
+    title: "About Trippy Travelerz — Artisanal Luxury Travel & Craftsmanship",
     description:
-      "Learn about Trippy Travellers' philosophy, our master travel designers, and our commitment to slow, bespoke, and immersive journeys across the globe.",
+      "Learn about Trippy Travelerz' philosophy, our master travel designers, and our commitment to slow, bespoke, and immersive journeys across the globe.",
     type: "website",
   },
 };
@@ -69,7 +69,7 @@ export default function AboutPage() {
               We Believe Travel Should Feel Like Poetry, Not a Checklist.
             </h1>
             <p className="about-hero-subtitle">
-              Trippy Travellers was founded on a simple truth: the most profound travel memories are never born from crowded bus tours or hurried tourist traps. They happen in the quiet, bespoke spaces between destinations.
+              Trippy Travelerz was founded on a simple truth: the most profound travel memories are never born from crowded bus tours or hurried tourist traps. They happen in the quiet, bespoke spaces between destinations.
             </p>
           </div>
         </section>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                 In 2020, as travelers grew weary of generic package holidays where every group was herded to the same souvenir stalls, our founders set out to resurrect the art of the Grand Tour.
               </p>
               <p style={{ fontSize: 15, color: "var(--text-body)", lineHeight: 1.7, marginBottom: 24 }}>
-                We partnered directly with boutique hoteliers, local historians, wildlife naturalists, and private chauffeur networks. Today, Trippy Travellers crafts journeys for couples celebrating milestones, multi-generational families seeking comfort, and travelers who value their peace of mind above all else.
+                We partnered directly with boutique hoteliers, local historians, wildlife naturalists, and private chauffeur networks. Today, Trippy Travelerz crafts journeys for couples celebrating milestones, multi-generational families seeking comfort, and travelers who value their peace of mind above all else.
               </p>
 
               <div className="about-quote-box">
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   &ldquo;A journey is best measured in friends rather than miles, and in unforgettable memories rather than checked boxes.&rdquo;
                 </p>
                 <span style={{ fontSize: 12, fontWeight: 700, color: "var(--brand-ochre)", textTransform: "uppercase", letterSpacing: 0.5 }}>
-                  — The Trippy Travellers Design Guild
+                  — The Trippy Travelerz Design Guild
                 </span>
               </div>
             </div>

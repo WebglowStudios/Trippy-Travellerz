@@ -29,7 +29,7 @@ const visaCountries: VisaCountry[] = [
   {
     name: "Sri Lanka",
     tagline: "Tropical Wonders",
-    photo: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?w=600&q=80&auto=format&fit=crop",
+    photo: "https://images.unsplash.com/photo-1580794749460-76f97b7180d8?w=600&q=80&auto=format&fit=crop",
     slug: "sri-lanka",
   },
   {

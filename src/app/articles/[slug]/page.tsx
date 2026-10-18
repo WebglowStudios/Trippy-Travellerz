@@ -28,21 +28,21 @@ function ArticleDetailInner({ params }: ArticleDetailPageProps) {
             typeof d.content === "object" && d.content?.sections
               ? d.content
               : {
-                  lead: d.excerpt || d.title,
-                  sections: [
-                    {
-                      heading: "Overview & Dispatches",
-                      body:
-                        typeof d.content === "string"
-                          ? d.content.split("\n\n").filter(Boolean)
-                          : ["Discover bespoke adventures curated for discerning travellers."],
-                    },
-                  ],
-                  takeaways: [
-                    "Reserve signature stays and private excursions well in advance.",
-                    "Contact Trippy Travellers concierge for VIP entry and tailored requests.",
-                  ],
-                };
+                lead: d.excerpt || d.title,
+                sections: [
+                  {
+                    heading: "Overview & Dispatches",
+                    body:
+                      typeof d.content === "string"
+                        ? d.content.split("\n\n").filter(Boolean)
+                        : ["Discover bespoke adventures curated for discerning Travelerz."],
+                  },
+                ],
+                takeaways: [
+                  "Reserve signature stays and private excursions well in advance.",
+                  "Contact Trippy Travelerz concierge for VIP entry and tailored requests.",
+                ],
+              };
 
           setArticle({
             slug: d.slug,

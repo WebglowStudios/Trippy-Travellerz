@@ -5306,6 +5306,10 @@
       align-items: center;
       gap: 4px;
       border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .dest-badge-top-right {
@@ -5363,6 +5367,7 @@
       margin: 0 0 14px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
@@ -5526,10 +5531,15 @@
 
     .dest-hero-description {
       font-size: 16px;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.88);
       line-height: 1.6;
-      max-width: 720px;
+      max-width: 740px;
       margin: 0 0 28px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     /* Specs Ribbon */
@@ -5569,6 +5579,11 @@
       font-size: 13.5px;
       color: #FFFFFF;
       font-weight: 700;
+      display: block;
+      max-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .dest-hero-actions {

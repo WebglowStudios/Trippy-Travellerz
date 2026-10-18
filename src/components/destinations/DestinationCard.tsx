@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ShowcaseDestination } from "@/lib/showcase-destinations";
+import { sanitizeDestinationText, sanitizeBestSeason } from "@/lib/destination-assets";
 
 interface DestinationCardProps {
   destination: ShowcaseDestination;
@@ -17,6 +18,11 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
       ? "Fast E-Visa"
       : "Visa Required";
 
+  const cleanSeason = sanitizeBestSeason(destination.bestSeason);
+  const cleanDesc = destination.shortDescription
+    ? sanitizeDestinationText(destination.shortDescription, 110)
+    : sanitizeDestinationText(destination.description, 110);
+
   return (
     <div className="dest-item-card">
       <Link
@@ -29,9 +35,9 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
           
           {/* Badges */}
           <div className="dest-badge-top-left">
-            <span className="dest-season-badge">
+            <span className="dest-season-badge" title={cleanSeason}>
               <span className="material-symbols-rounded" style={{ fontSize: 13 }}>wb_sunny</span>
-              {destination.bestSeason}
+              {cleanSeason}
             </span>
           </div>
 
@@ -60,7 +66,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
           </h3>
 
           <p className="dest-desc-text">
-            {destination.shortDescription || destination.description}
+            {cleanDesc}
           </p>
 
           {/* Highlights Mini Pills */}

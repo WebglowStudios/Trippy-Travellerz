@@ -16,6 +16,7 @@ import CustomItineraryBanner from "@/components/packages/CustomItineraryBanner";
 import EnquiryForm from "@/components/package-detail/EnquiryForm";
 import { api } from "@/lib/api";
 import { SHOWCASE_DESTINATIONS, ShowcaseDestination } from "@/lib/showcase-destinations";
+import { getCuratedDestination, sanitizeDestinationText, sanitizeBestSeason } from "@/lib/destination-assets";
 import { PackageItem } from "@/components/packages/PackageCatalogCard";
 
 function DestinationDetailInner() {
@@ -35,47 +36,74 @@ function DestinationDetailInner() {
       try {
         setLoading(true);
 
-        // 1. Fetch Destination
+        // 1. Fetch Destination from Backend with curated overlay
         let destData: ShowcaseDestination | null = null;
         try {
           const res = await api.get(`/destinations/${slug}`);
           if (res.status === "success" && res.data) {
             const d = res.data;
+            const curated = getCuratedDestination(slug) || getCuratedDestination(d.name) || getCuratedDestination(d.slug);
             const showcaseMatch = SHOWCASE_DESTINATIONS.find(
               (s) => s.slug.toLowerCase() === slug.toLowerCase() || s.name.toLowerCase() === d.name?.toLowerCase()
             );
 
             destData = {
-              id: d._id || d.slug,
-              name: d.name,
-              slug: d.slug,
-              country: d.country || showcaseMatch?.country || "International",
-              region: (d.region as any) || showcaseMatch?.region || "South East Asia",
-              description: d.description || showcaseMatch?.description || "",
-              shortDescription: d.shortDescription || showcaseMatch?.shortDescription || "",
-              image: d.heroImage || (d.images && d.images[0]) || showcaseMatch?.image || "",
-              images: d.images || showcaseMatch?.images || [],
-              startingPrice: d.startingPrice || showcaseMatch?.startingPrice || 49999,
-              packageCount: d.packageCount || showcaseMatch?.packageCount || 3,
-              rating: d.rating || showcaseMatch?.rating || 4.8,
-              reviewCount: d.reviewCount || showcaseMatch?.reviewCount || 150,
-              bestSeason: d.bestSeason || showcaseMatch?.bestSeason || "October to April",
-              visaType: (d.visaType as any) || showcaseMatch?.visaType || "on-arrival",
-              currency: showcaseMatch?.currency || "Local Currency",
-              language: showcaseMatch?.language || "English",
-              highlights: d.highlights || showcaseMatch?.highlights || ["Curated Tours", "Luxury Stays"],
-              travelTips: d.travelTips || showcaseMatch?.travelTips || [],
-              whyVisit: d.whyVisit || showcaseMatch?.whyVisit || [],
+              id: d._id || d.slug || curated?.id || slug,
+              name: curated?.name || d.name,
+              slug: d.slug || curated?.slug || slug,
+              country: curated?.country || d.country || showcaseMatch?.country || "India",
+              region: (curated?.region as any) || (d.region as any) || showcaseMatch?.region || "India & Subcontinent",
+              description: curated?.heroDescription || sanitizeDestinationText(d.description, 280) || showcaseMatch?.description || "",
+              shortDescription: curated?.shortDescription || sanitizeDestinationText(d.shortDescription, 120) || showcaseMatch?.shortDescription || "",
+              image: curated?.heroImage || d.heroImage || (d.images && d.images[0]) || showcaseMatch?.image || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+              images: (curated?.images && curated.images.length > 0) ? curated.images : (d.images && d.images.length > 0) ? d.images : showcaseMatch?.images || [],
+              startingPrice: d.startingPrice || curated?.startingPrice || showcaseMatch?.startingPrice || 49999,
+              packageCount: d.packageCount || curated?.packageCount || showcaseMatch?.packageCount || 3,
+              rating: d.rating || curated?.rating || showcaseMatch?.rating || 4.8,
+              reviewCount: d.reviewCount || curated?.reviewCount || showcaseMatch?.reviewCount || 150,
+              bestSeason: curated?.bestSeason || sanitizeBestSeason(d.bestSeason, showcaseMatch?.bestSeason || "October to April"),
+              visaType: (curated?.visaType as any) || (d.visaType as any) || showcaseMatch?.visaType || "on-arrival",
+              currency: curated?.currency || showcaseMatch?.currency || "INR (₹)",
+              language: curated?.language || showcaseMatch?.language || "English",
+              highlights: (curated?.highlights && curated.highlights.length > 0) ? curated.highlights : (d.highlights && d.highlights.length > 0) ? d.highlights : showcaseMatch?.highlights || ["Curated Tours", "Luxury Stays"],
+              travelTips: curated?.travelTips || d.travelTips || showcaseMatch?.travelTips || [],
+              whyVisit: curated?.whyVisit || d.whyVisit || showcaseMatch?.whyVisit || [],
             };
           }
         } catch {
-          // Fallback to showcase
+          // Fallback to curated or showcase
         }
 
         if (!destData) {
-          destData = SHOWCASE_DESTINATIONS.find(
-            (s) => s.slug.toLowerCase() === slug.toLowerCase() || slug.toLowerCase().includes(s.id)
-          ) || null;
+          const curated = getCuratedDestination(slug);
+          if (curated) {
+            destData = {
+              id: curated.id,
+              name: curated.name,
+              slug: curated.slug,
+              country: curated.country,
+              region: curated.region as any,
+              description: curated.heroDescription,
+              shortDescription: curated.shortDescription,
+              image: curated.heroImage,
+              images: curated.images,
+              startingPrice: curated.startingPrice,
+              packageCount: curated.packageCount,
+              rating: curated.rating,
+              reviewCount: curated.reviewCount,
+              bestSeason: curated.bestSeason,
+              visaType: curated.visaType,
+              currency: curated.currency,
+              language: curated.language,
+              highlights: curated.highlights,
+              travelTips: curated.travelTips || [],
+              whyVisit: curated.whyVisit || [],
+            };
+          } else {
+            destData = SHOWCASE_DESTINATIONS.find(
+              (s) => s.slug.toLowerCase() === slug.toLowerCase() || slug.toLowerCase().includes(s.id)
+            ) || null;
+          }
         }
 
         setDestination(destData);

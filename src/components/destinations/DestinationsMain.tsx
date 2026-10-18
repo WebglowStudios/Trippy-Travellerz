@@ -8,6 +8,12 @@ import DestinationCard from "./DestinationCard";
 import CustomItineraryBanner from "@/components/packages/CustomItineraryBanner";
 import EnquiryForm from "@/components/package-detail/EnquiryForm";
 import { SHOWCASE_DESTINATIONS, ShowcaseDestination } from "@/lib/showcase-destinations";
+import {
+  DESTINATION_ASSETS,
+  getCuratedDestination,
+  sanitizeDestinationText,
+  sanitizeBestSeason,
+} from "@/lib/destination-assets";
 
 const REGIONS = [
   "Middle East",
@@ -16,12 +22,35 @@ const REGIONS = [
   "Islands & Africa",
 ];
 
+const INITIAL_DESTINATIONS: ShowcaseDestination[] = Object.values(DESTINATION_ASSETS).map((c) => ({
+  id: c.id,
+  name: c.name,
+  slug: c.slug,
+  country: c.country,
+  region: c.region as any,
+  description: c.heroDescription,
+  shortDescription: c.shortDescription,
+  image: c.heroImage,
+  images: c.images,
+  startingPrice: c.startingPrice,
+  packageCount: c.packageCount,
+  rating: c.rating,
+  reviewCount: c.reviewCount,
+  bestSeason: c.bestSeason,
+  visaType: c.visaType,
+  currency: c.currency,
+  language: c.language,
+  highlights: c.highlights,
+  travelTips: c.travelTips || [],
+  whyVisit: c.whyVisit || [],
+}));
+
 export default function DestinationsMain() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   // Primary Data States
-  const [destinations, setDestinations] = useState<ShowcaseDestination[]>(SHOWCASE_DESTINATIONS);
+  const [destinations, setDestinations] = useState<ShowcaseDestination[]>(INITIAL_DESTINATIONS);
   const [loading, setLoading] = useState(true);
   const [enquiryModalOpen, setEnquiryModalOpen] = useState(false);
 
@@ -39,40 +68,65 @@ export default function DestinationsMain() {
         const res = await api.get("/destinations?limit=100");
 
         if (res.status === "success" && Array.isArray(res.data)) {
-          const mapped: ShowcaseDestination[] = res.data.map((d: any) => {
-            // Find existing showcase match for rich tips/photos
-            const match = SHOWCASE_DESTINATIONS.find(
-              (sd) => sd.slug.toLowerCase() === d.slug?.toLowerCase() || sd.name.toLowerCase() === d.name?.toLowerCase()
-            );
-
-            return {
-              id: d._id || d.slug,
-              name: d.name,
-              slug: d.slug,
-              country: d.country || match?.country || "International",
-              region: (d.region as any) || match?.region || "South East Asia",
-              description: d.description || match?.description || "",
-              shortDescription: d.shortDescription || match?.shortDescription || "",
-              image: d.heroImage || (d.images && d.images[0]) || match?.image || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
-              images: d.images || match?.images || [],
-              startingPrice: d.startingPrice || match?.startingPrice || 49999,
-              packageCount: d.packageCount || match?.packageCount || 3,
-              rating: d.rating || match?.rating || 4.8,
-              reviewCount: d.reviewCount || match?.reviewCount || 150,
-              bestSeason: d.bestSeason || match?.bestSeason || "Year-round",
-              visaType: (d.visaType as any) || match?.visaType || "on-arrival",
-              currency: match?.currency || "Local Currency",
-              language: match?.language || "English",
-              highlights: d.highlights || match?.highlights || ["Curated Tours", "Luxury Stays"],
-              travelTips: d.travelTips || match?.travelTips || [],
-              whyVisit: d.whyVisit || match?.whyVisit || [],
-            };
-          });
-
-          // Merge backend destinations with showcase destinations (dedupe by slug)
+          // Master deduplicated map initialized with curated assets
           const map = new Map<string, ShowcaseDestination>();
-          SHOWCASE_DESTINATIONS.forEach((s) => map.set(s.slug, s));
-          mapped.forEach((m) => map.set(m.slug, m));
+          INITIAL_DESTINATIONS.forEach((d) => map.set(d.slug.toLowerCase(), d));
+
+          // Ingest backend records with curated priority
+          res.data.forEach((d: any) => {
+            if (!d.name || d.name.trim().length === 0) return;
+            const normSlug = (d.slug || d.name).toLowerCase().trim().replace(/\s+/g, "-");
+            const curated = getCuratedDestination(normSlug) || getCuratedDestination(d.name);
+
+            if (curated) {
+              map.set(normSlug, {
+                id: d._id || curated.id,
+                name: curated.name,
+                slug: curated.slug,
+                country: curated.country,
+                region: curated.region as any,
+                description: curated.heroDescription,
+                shortDescription: curated.shortDescription,
+                image: curated.heroImage,
+                images: curated.images,
+                startingPrice: d.startingPrice || curated.startingPrice,
+                packageCount: d.packageCount || curated.packageCount,
+                rating: d.rating || curated.rating,
+                reviewCount: d.reviewCount || curated.reviewCount,
+                bestSeason: curated.bestSeason,
+                visaType: curated.visaType,
+                currency: curated.currency,
+                language: curated.language,
+                highlights: curated.highlights,
+                travelTips: curated.travelTips || [],
+                whyVisit: curated.whyVisit || [],
+              });
+            } else {
+              // Uncurated backend record: sanitize thoroughly
+              map.set(normSlug, {
+                id: d._id || normSlug,
+                name: d.name.trim(),
+                slug: normSlug,
+                country: d.country || "International",
+                region: (d.region as any) || "India & Subcontinent",
+                description: sanitizeDestinationText(d.description, 260),
+                shortDescription: sanitizeDestinationText(d.shortDescription || d.description, 110),
+                image: d.heroImage || (d.images && d.images[0]) || "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+                images: d.images || [],
+                startingPrice: d.startingPrice > 0 ? d.startingPrice : 39999,
+                packageCount: d.packageCount || 2,
+                rating: d.rating || 4.8,
+                reviewCount: d.reviewCount || 120,
+                bestSeason: sanitizeBestSeason(d.bestSeason, "October to April"),
+                visaType: (d.visaType as any) || "on-arrival",
+                currency: "INR (₹)",
+                language: "English",
+                highlights: Array.isArray(d.highlights) && d.highlights.length > 0 ? d.highlights : ["Scenic Landscapes", "Curated Stays"],
+                travelTips: d.travelTips || [],
+                whyVisit: d.whyVisit || [],
+              });
+            }
+          });
 
           setDestinations(Array.from(map.values()));
         }

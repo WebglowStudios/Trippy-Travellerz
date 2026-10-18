@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ShowcaseDestination } from "@/lib/showcase-destinations";
+import { sanitizeDestinationText, sanitizeBestSeason } from "@/lib/destination-assets";
 
 interface DestinationHeroProps {
   destination: ShowcaseDestination;
@@ -22,6 +23,13 @@ export default function DestinationHero({
       : destination.visaType === "e-visa"
       ? "Electronic eVisa 📄"
       : "Visa Required";
+
+  const cleanDescription =
+    destination.shortDescription && destination.shortDescription.length < 300
+      ? sanitizeDestinationText(destination.shortDescription, 260)
+      : sanitizeDestinationText(destination.description, 260);
+
+  const cleanSeason = sanitizeBestSeason(destination.bestSeason);
 
   return (
     <section className="dest-hero-section">
@@ -58,7 +66,7 @@ export default function DestinationHero({
         </h1>
 
         <p className="dest-hero-description">
-          {destination.description}
+          {cleanDescription}
         </p>
 
         {/* Quick Specs Ribbon */}
@@ -67,7 +75,7 @@ export default function DestinationHero({
             <span className="material-symbols-rounded">wb_sunny</span>
             <div>
               <small>Best Season</small>
-              <strong>{destination.bestSeason}</strong>
+              <strong title={cleanSeason}>{cleanSeason}</strong>
             </div>
           </div>
 

@@ -1,0 +1,1354 @@
+{
+  "spiti-valley": {
+    "id": "spiti-valley",
+    "name": "Spiti Valley",
+    "slug": "spiti-valley",
+    "heroImage": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1200&q=80"
+    ],
+    "description": "Perched high in the Trans-Himalayan cold desert, Spiti is a realm of dramatic windswept gorges, ancient cliffside monasteries, and starlit night skies. Ideal for intrepid road-trippers, cultural explorers, and high-altitude adventurers.",
+    "shortDescription": "Trans-Himalayan cold desert, cliffside monasteries, and starlit high-altitude valleys.",
+    "bestSeason": "May to October (Roads Open)",
+    "packageCount": 29,
+    "startingPrice": 5000,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "uttarakhand": {
+    "id": "uttarakhand",
+    "name": "Uttarakhand",
+    "slug": "uttarakhand",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782798016/letslivetours/Uttarakhand/Rishikesh/Lakshman-Jhula-mr07woaw.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782796905/letslivetours/Uttarakhand/Haridwar/ganga-ghat-haridwar1-attr-hero-mr078v2g.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782797573/letslivetours/Uttarakhand/Gorsan%20Bugyal/Auli-Ropeway-mr07n7kl.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802256/letslivetours/Uttarakhand/Mussoorie/kempty-falls-mussoorie-tourism-header-mr0afkg9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782804397/letslivetours/Uttarakhand/jim%20Corbett%20National%20Park/Jungle-Safari-mr0bpflq.jpg"
+    ],
+    "description": "Devbhumi Uttarakhand inspires with sacred river confluences, high-altitude alpine meadows, and serene hill towns like Mussoorie and Nainital. A sanctuary for spiritual journeys, yoga retreats, white-water rafting, and tiger safaris.",
+    "shortDescription": "Sacred Himalayan shrines, alpine bugyals, and peaceful river valleys.",
+    "bestSeason": "March to June & Sep to Nov",
+    "packageCount": 27,
+    "startingPrice": 5499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "thailand": {
+    "id": "thailand",
+    "name": "Thailand",
+    "slug": "thailand",
+    "heroImage": "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512553353614-82a7370096dc?w=1200&q=80",
+      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&q=80"
+    ],
+    "description": "Gilded Buddhist temples, turquoise Andaman island lagoons, world-renowned street cuisine, and lively night markets. Thailand is Southeast Asia's ultimate tropical playground for romance, island-hopping adventures, and cultural discoveries.",
+    "shortDescription": "Turquoise lagoons, gilded temples, and tropical island bliss.",
+    "bestSeason": "November to April (Dry Season)",
+    "packageCount": 27,
+    "startingPrice": 15999,
+    "country": "Thailand",
+    "region": "South East Asia"
+  },
+  "ladakh": {
+    "id": "ladakh",
+    "name": "Ladakh",
+    "slug": "ladakh",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782825353/letslivetours/Leh%20-%20Ladakh/photo-1593118845043-359e5f628214-mr0o6mbk.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782826299/letslivetours/Leh%20-%20Ladakh/Nubra%20Valley/Nubra_valley_charzan_holidays-mr0oqw35.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782884291/letslivetours/Leh%20-%20Ladakh/Leh-Palace-mr1n9v3s.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782826191/letslivetours/Leh%20-%20Ladakh/Sham%20Valley/magnetic-hill-mr0oolbv.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782892390/letslivetours/Leh%20-%20Ladakh/Stok%20Village/stok-palace-heritage-mr1s3gj8.jpg"
+    ],
+    "description": "Land of High Passes where dramatic azure lakes meet barren moonscapes. Experience Pangong Tso, Khardung La pass, and centuries-old Buddhist gompas in an unforgettable high-altitude adventure across the majestic Indian Himalayas.",
+    "shortDescription": "Azure alpine lakes, Khardung La pass, and serene Buddhist gompas.",
+    "bestSeason": "May to September (Summer Peaks)",
+    "packageCount": 26,
+    "startingPrice": 6000,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "manali": {
+    "id": "manali",
+    "name": "Manali",
+    "slug": "manali",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782911400/letslivetours/Himachal%20Pradesh/pexels-sanket-barik-2808574-8020071-mr23ewl8.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902782/letslivetours/Himachal%20Pradesh/Manali/_Himalayan_National_Park-mr1ya6or.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782911398/letslivetours/Himachal%20Pradesh/pexels-utkarsh-636258668-29943762-mr23euw0.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902960/letslivetours/Himachal%20Pradesh/Manali/Van-Vihar-National-Park-mr1ye025.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905713/letslivetours/Himachal%20Pradesh/kasol/pravati-valley-kasol-mr201046.jpg"
+    ],
+    "description": "Nestled along the Beas River, Manali combines alpine pine forests, thrilling Solang Valley adventures, and snowy Rohtang Pass vistas. The ultimate Himalayan getaway for honeymooners, backpackers, and mountain sports enthusiasts alike.",
+    "shortDescription": "Snow-crested peaks, river valleys, apple orchards, and pine forests.",
+    "bestSeason": "October to June & Dec–Feb (Snow)",
+    "packageCount": 26,
+    "startingPrice": 4399,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "vietnam": {
+    "id": "vietnam",
+    "name": "Vietnam",
+    "slug": "vietnam",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1784093811/letslivetours/Vietnam/pexels-quang-nguyen-vinh-222549-14022214-mrlndww2.jpg",
+    "images": [
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=80",
+      "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=1200&q=80",
+      "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=1200&q=80",
+      "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1200&q=80"
+    ],
+    "description": "Emerald waters of Halong Bay, lantern-lit alleys of Hoi An, and bustling street markets of Hanoi. Vietnam offers a captivating tapestry of dramatic limestone landscapes, French-colonial heritage, and unforgettable culinary adventures.",
+    "shortDescription": "Halong Bay karsts, lantern-lit Hoi An, and vibrant street food.",
+    "bestSeason": "September to April (Pleasant Weather)",
+    "packageCount": 24,
+    "startingPrice": 15999,
+    "country": "Vietnam",
+    "region": "South East Asia"
+  },
+  "himachal": {
+    "id": "himachal",
+    "name": "Himachal",
+    "slug": "himachal",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1780986887/letslivetours/siimlrwehsp1dzyhgqpv.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1780986186/letslivetours/zho6ban7n3kjwqclsaay.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902006/letslivetours/Himachal%20Pradesh/Shimla/shimla-555885_1280-mr1xtkmd.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782973137/letslivetours/Himachal%20Pradesh/shangarh/shimla-india-shutterstock_401682040_782e317f1f-mr3465c4.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782975836/letslivetours/Himachal%20Pradesh/Shimla/kufriii-mr35rz3a.jpg"
+    ],
+    "description": "From colonial hill retreats and cedar-fringed ridges to Tibetan monasteries and remote apple orchards, Himachal Pradesh delivers quintessential mountain tranquility, thrilling trekking circuits, and scenic road trips across the Himalayas.",
+    "shortDescription": "Cedar-clad mountain passes, serene valleys, and Tibetan monasteries.",
+    "bestSeason": "March to June & Oct to Dec",
+    "packageCount": 20,
+    "startingPrice": 6999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "kashmir": {
+    "id": "kashmir",
+    "name": "Kashmir",
+    "slug": "kashmir",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782739767/letslivetours/Kashmir/House-boat-mqz98812.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782733526/letslivetours/Kashmir/Gulmarg%20sightseeing/Gondola-cable-e-mqz5ifw9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782731599/letslivetours/Kashmir/Srinagar%20Sightseeing/parimahal-mqz4d5i9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782741807/letslivetours/Kashmir/Yusmarg/d087dd46-5d8b-4733-bb29-ceda593dea48_August-Kashmirgreatlakes_Indiahikes_Ra_LsRj-mqzafx58.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782731960/letslivetours/Kashmir/Srinagar%20Sightseeing/floating-vegetable-market-srinagar-mqz4kutu.jpg"
+    ],
+    "description": "Known as Paradise on Earth, Kashmir enchants with crystalline mountain rivers, majestic Chinar avenues, and floating wooden houseboats against the snow-capped Pir Panjal range. A dreamland for romance, skiing in Gulmarg, and serene shikara rides.",
+    "shortDescription": "Dal Lake wooden shikaras, snow-dusted Gulmarg slopes, and timeless Mughal garden beauty.",
+    "bestSeason": "March to October & Dec–Feb (Snow)",
+    "packageCount": 15,
+    "startingPrice": 9999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "rajasthan": {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "slug": "rajasthan",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782720710/letslivetours/Rajasthan/Jodhpur-mqyxvq9q.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782713905/letslivetours/Rajasthan/hawa-mahal-6156123_1280-mqyttw8k.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782566645/letslivetours/Rajasthan/Jaipur%20Sightseeing/Amber-Fort-i-mqwe5krt.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782568354/letslivetours/Rajasthan/Udaipur%20sightseeing/Jag-Mandir-Palace-mqwf68yj.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782727619/letslivetours/Rajasthan/Jaisalmer%20Sightseeing%20Tour/amdunes-mqz1zu62.jpg"
+    ],
+    "description": "Land of Kings filled with grand Rajput forts, shimmering lakes in Udaipur, Thar desert camel safaris, and vibrant bazaars. Immerse yourself in centuries of royal heritage, luxurious palace hotels, and legendary Rajasthani hospitality.",
+    "shortDescription": "Regal palace fortresses, Thar desert dunes, and vibrant bazaars.",
+    "bestSeason": "October to March (Pleasant Winters)",
+    "packageCount": 15,
+    "startingPrice": 3499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "europe": {
+    "id": "europe",
+    "name": "Europe",
+    "slug": "europe",
+    "heroImage": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1200&q=80",
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=1200&q=80"
+    ],
+    "description": "From the snow-crowned summits of the Swiss Alps and romantic canals of Venice to Paris boulevards and Roman antiquities. Europe is the ultimate continent of timeless art, world-class gastronomy, and fairytale alpine landscapes.",
+    "shortDescription": "Swiss Alps summits, Parisian boulevards, and Venetian waterways.",
+    "bestSeason": "May to October (Summer & Autumn)",
+    "packageCount": 15,
+    "startingPrice": 15999,
+    "country": "Europe",
+    "region": "Europe"
+  },
+  "dubai": {
+    "id": "dubai",
+    "name": "Dubai",
+    "slug": "dubai",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782107902/letslivetours/Dubai/7c70ab1d-5b73-4916-a4a6-3cfdd2e876b7-mqot14yz.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782107898/letslivetours/Dubai/Dubai-Frame-mqot1215.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782107895/letslivetours/Dubai/0328-0215_dubai-mqot0x4e.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782537237/letslivetours/Dubai/dubai-city-mqvwna43.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782539050/letslivetours/Dubai/Desert%20Safari%20with%20BBQ%20Dinner%20Experience/pic-82-mqvxq58q.jpg"
+    ],
+    "description": "Where golden desert dunes meet futuristic architectural marvels. Dubai offers Michelin-star dining, thrilling 4x4 dune bashing, world-record observation decks, and luxury shopping along the sparkling waters of the Arabian Gulf.",
+    "shortDescription": "Futuristic skylines, desert dunes, and ultra-luxury living.",
+    "bestSeason": "November to March (Pleasant Temperatures)",
+    "packageCount": 13,
+    "startingPrice": 4000,
+    "country": "United Arab Emirates",
+    "region": "Middle East"
+  },
+  "meghalaya": {
+    "id": "meghalaya",
+    "name": "Meghalaya",
+    "slug": "meghalaya",
+    "heroImage": "https://images.unsplash.com/photo-1521437620269-f477f5437820?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1742494267580-e026d3737f65?w=1200&q=80",
+      "https://images.unsplash.com/photo-1689089526066-c7e6e95ee265?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80"
+    ],
+    "description": "The Abode of the Clouds enchants with crystal-clear waters in Dawki, bio-engineered living root bridges in Nongriat, and roaring Cherrapunji waterfalls. An ethereal paradise of misty hill walks, sacred groves, and clean village culture.",
+    "shortDescription": "Crystal-clear Dawki river, living root bridges, and misty waterfalls.",
+    "bestSeason": "October to April (Post-Monsoon & Winter)",
+    "packageCount": 12,
+    "startingPrice": 5000,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "sri-lanka": {
+    "id": "sri-lanka",
+    "name": "Sri Lanka",
+    "slug": "sri-lanka",
+    "heroImage": "https://images.unsplash.com/photo-1580794749460-76f97b7180d8?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1734279135113-8bd58bc02b69?w=1200&q=80",
+      "https://images.unsplash.com/photo-1603097148068-564d0158227e?w=1200&q=80",
+      "https://images.unsplash.com/photo-1779716892231-5a58a7fc67ac?w=1200&q=80",
+      "https://images.unsplash.com/photo-1674556275226-47b6b393d623?w=1200&q=80"
+    ],
+    "description": "The Pearl of the Indian Ocean offers mist-covered Ceylon tea estates in Ella, ancient Sigiriya rock fortress ramparts, golden surf beaches in Mirissa, and wild elephant safaris across lush tropical national parks.",
+    "shortDescription": "Sigiriya rock fortress, misty Ella tea estates, and wild elephant safaris.",
+    "bestSeason": "December to April (West & South) & May to Sep (East)",
+    "packageCount": 11,
+    "startingPrice": 15999,
+    "country": "Sri Lanka",
+    "region": "India & Subcontinent"
+  },
+  "japan": {
+    "id": "japan",
+    "name": "Japan",
+    "slug": "japan",
+    "heroImage": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=1200&q=80",
+      "https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=1200&q=80",
+      "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=1200&q=80"
+    ],
+    "description": "Where ancient Zen temples and tranquil bamboo forests coexist harmoniously with neon-lit Tokyo skylines and bullet trains. Savor authentic culinary masters, historic Kyoto tea houses, and the timeless majesty of Mount Fuji.",
+    "shortDescription": "Mount Fuji views, Kyoto historic temples, and Tokyo neon energy.",
+    "bestSeason": "March to May (Sakura) & Oct to Nov (Autumn Foliage)",
+    "packageCount": 9,
+    "startingPrice": 15999,
+    "country": "Japan",
+    "region": "South East Asia"
+  },
+  "bali-honeymoon": {
+    "id": "bali-honeymoon",
+    "name": "Bali",
+    "slug": "bali-honeymoon",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783431065/letslivetours/Bali/rq8yyk002l8klmkf1ql6cz3pphf7_shutterstock_2324082951-mraot51r.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783430514/letslivetours/Bali/pexels-yousef-salah-19422222-18875283-mraohbix.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783430501/letslivetours/Bali/pexels-kephuah-14972552-mraoh1c1.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783430698/letslivetours/Bali/pexels-2157725003-35160281-mraol9f5.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783430519/letslivetours/Bali/pexels-chand-karditya-169333606-11186280-mraohf12.jpg"
+    ],
+    "description": "The Island of the Gods balances spiritual temple serenity, lush jungle resorts in Ubud, world-class beach clubs in Seminyak, and dramatic Nusa Penida cliffs. An enchanting paradise crafted for romance, wellness, and island discovery.",
+    "shortDescription": "Emerald rice terraces, spiritual temples, and luxury pool villas.",
+    "bestSeason": "April to October (Dry & Sunny)",
+    "packageCount": 8,
+    "startingPrice": 15999,
+    "country": "Indonesia",
+    "region": "South East Asia"
+  },
+  "bhutan": {
+    "id": "bhutan",
+    "name": "Bhutan",
+    "slug": "bhutan",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781604620/letslivetours/Bhutan/Gangtey-Gompa-Monestry-mqghe2o4.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781604624/letslivetours/Bhutan/paro-1-mqghe5h2.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781604635/letslivetours/Bhutan/punakha-3-mqghee2d.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781604649/letslivetours/Bhutan/thimphu-City-mqgheojg.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781604612/letslivetours/Bhutan/-punakha-mqghdv64.jpg"
+    ],
+    "description": "The Last Shangri-La where Gross National Happiness guides daily life. Visit cliffside Tiger's Nest monastery, sacred Punakha Dzong, and tranquil Himalayan valleys in the world's most serene and culturally preserved Buddhist kingdom.",
+    "shortDescription": "Tiger's Nest cliffside monastery and peaceful Himalayan valleys.",
+    "bestSeason": "March to May & September to November",
+    "packageCount": 7,
+    "startingPrice": 15999,
+    "country": "Bhutan",
+    "region": "India & Subcontinent"
+  },
+  "almaty": {
+    "id": "almaty",
+    "name": "Almaty",
+    "slug": "almaty",
+    "heroImage": "https://images.unsplash.com/photo-1727527817255-0c2646cb0587?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1659651117607-d2b397cf100f?w=1200&q=80",
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80"
+    ],
+    "description": "Kazakhstan's cultural jewel framed by the towering Tian Shan mountains. Ride cable cars to Shymbulak ski resort, gaze across turquoise alpine lakes, and explore dramatic canyons in Central Asia's most sophisticated and scenic getaway.",
+    "shortDescription": "Tian Shan snow mountains, Big Almaty Lake, and Shymbulak ski trails.",
+    "bestSeason": "May to October & Dec–Feb (Skiing)",
+    "packageCount": 7,
+    "startingPrice": 15999,
+    "country": "Kazakhstan",
+    "region": "Europe"
+  },
+  "mcleodganj-triund": {
+    "id": "mcleodganj-triund",
+    "name": "Mcleodganj & Triund",
+    "slug": "mcleodganj-triund",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782898258/letslivetours/Himachal%20Pradesh/Dharamshala/Dharamshala-India-mr1vl83u.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782898687/letslivetours/Himachal%20Pradesh/Mcleod%20Ganj/Nadii-village-mr1vudfq.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782898256/letslivetours/Himachal%20Pradesh/Dharamshala/Tibetan-monastery-mr1vl6yx.jpg",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80"
+    ],
+    "description": "Perched under the craggy Dhauladhar ranges, Little Lhasa harmonizes spiritual Tibetan monasteries, vibrant mountain cafés, and the iconic Triund ridge trek. A rejuvenating haven for trekking enthusiasts, yogis, and peaceful retreats.",
+    "shortDescription": "Dhauladhar mountain views, Tibetan monasteries, and Triund trek.",
+    "bestSeason": "March to June & September to December",
+    "packageCount": 7,
+    "startingPrice": 6999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "kedarkantha": {
+    "id": "kedarkantha",
+    "name": "Kedarkantha",
+    "slug": "kedarkantha",
+    "heroImage": "https://images.unsplash.com/photo-1612438214708-f428a707dd4e?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1740383234311-565ff740c7c0?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80"
+    ],
+    "description": "India's premier winter snow trek in the Garhwal Himalayas. Trek through dense pine glades to frozen Juda Ka Talab, culminating in an awe-inspiring 360-degree sunrise summit view over Bandarpoonch, Swargarohini, and Black Peak.",
+    "shortDescription": "Winter snow summit trek, frozen Juda Ka Talab, and pine forest trails.",
+    "bestSeason": "December to April (Snow Summit Season)",
+    "packageCount": 7,
+    "startingPrice": 7999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "baku": {
+    "id": "baku",
+    "name": "Baku",
+    "slug": "baku",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783946052/letslivetours/Azerbaijan/pexels-zulfugarkarimov-33329106-mrj7f31l.jpg",
+    "images": [
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=1200&q=80"
+    ],
+    "description": "The City of Winds on the Caspian Sea where medieval stone fortresses meet futuristic Flame Towers and Zaha Hadid architecture. A dynamic Eurasian destination known for rich Caucasian hospitality, mud volcanoes, and bustling cafés.",
+    "shortDescription": "Flame Towers, UNESCO Old City, and Caspian seaside promenade.",
+    "bestSeason": "April to June & September to October",
+    "packageCount": 6,
+    "startingPrice": 15999,
+    "country": "Azerbaijan",
+    "region": "Middle East"
+  },
+  "kerala": {
+    "id": "kerala",
+    "name": "Kerala",
+    "slug": "kerala",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782985780/letslivetours/Kerela/360_F_100222762_33DqpJR3KHwKXHXK2YDNvh9vBXDteRVX-mr3bp3qo.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782987492/letslivetours/Kerela/Munnar/Kundala-Lakeee-mr3cpt6j.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782985627/letslivetours/Kerela/Kumarakom/allpey-mr3blu7y.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782988677/letslivetours/Kerela/Kochi/fishing-net-mr3df8ha.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783074535/letslivetours/Kerela/Wayanad/chembrapeak-1-mr4sjg92.jpg"
+    ],
+    "description": "God's Own Country mesmerizes with tranquil palm-fringed backwaters, traditional wooden houseboats, mist-veiled Munnar tea estates, and pristine Arabian beaches. A tropical rejuvenation haven of Ayurvedic wellness and culinary delights.",
+    "shortDescription": "Tranquil backwater houseboats, Munnar tea hills, and Arabian coastlines.",
+    "bestSeason": "September to March",
+    "packageCount": 6,
+    "startingPrice": 9000,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "kedarnath": {
+    "id": "kedarnath",
+    "name": "Kedarnath",
+    "slug": "kedarnath",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1780989477/letslivetours/heka4gu5ntgftobs4asx.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781082573/letslivetours/gclzckillle3glvppsq9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781076011/letslivetours/ml7fzj0heb6qkdtpfc0r.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781076132/letslivetours/sjwitjnvbpbshoyavwly.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781000476/letslivetours/z08uilwyt1sexj8mjbrh.jpg"
+    ],
+    "description": "One of the holiest Jyotirlingas situated at 3,584 meters amidst the snow-clad Garhwal Himalayas. A deeply spiritual pilgrimage and dramatic mountain trek following the sacred Mandakini River to Lord Shiva's divine Himalayan abode.",
+    "shortDescription": "Sacred Kedarnath Jyotirlinga temple and Garhwal Himalayan peaks.",
+    "bestSeason": "May to June & September to October (Temple Open)",
+    "packageCount": 6,
+    "startingPrice": 11999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "georgia": {
+    "id": "georgia",
+    "name": "Georgia",
+    "slug": "georgia",
+    "heroImage": "https://images.unsplash.com/photo-1563284223-333497472e88?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1721350389988-774d1060c65a?w=1200&q=80",
+      "https://images.unsplash.com/photo-1561781887-40c905aa61cc?w=1200&q=80",
+      "https://images.unsplash.com/photo-1584097774515-8657972fdd29?w=1200&q=80",
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1200&q=80"
+    ],
+    "description": "Where Europe meets Asia in the heart of the dramatic Caucasus. Georgia charms with 8,000-year-old wine traditions, cliffside cave monasteries, ancient watchtowers in Svaneti, and the bohemian cobbled alleys of historic Tbilisi.",
+    "shortDescription": "Mount Kazbegi peaks, Gergeti Trinity church, and Old Tbilisi lanes.",
+    "bestSeason": "May to October (Spring to Autumn)",
+    "packageCount": 5,
+    "startingPrice": 15999,
+    "country": "Georgia",
+    "region": "Europe"
+  },
+  "andaman": {
+    "id": "andaman",
+    "name": "Andaman",
+    "slug": "andaman",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783081431/letslivetours/Andaman/tsvo3ebp0ymbe698j8xtxqt8anlc_Cpuple-Gallery-1-mr4wn85a.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1783146244/letslivetours/Andaman/Neil%20Island/bharatpur-beach-neil-island_840-mr5z8ds9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781549057/letslivetours/Andaman/e0xl3zesolmkr9r0lsmw.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781549054/letslivetours/Andaman/nmogncmuybkfkze7vmzl.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1781549059/letslivetours/Andaman/pvzjnmjvqzfqs2bmtkhr.jpg"
+    ],
+    "description": "Pristine white sand beaches, crystalline turquoise waters, and vibrant coral reefs in the Bay of Bengal. Andaman is an exotic tropical paradise made for world-class scuba diving, private beach strolls, and blissful island escapes.",
+    "shortDescription": "Pristine white sand shores, scuba diving reefs, and tropical sunsets.",
+    "bestSeason": "October to May",
+    "packageCount": 5,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "kasol-tosh": {
+    "id": "kasol-tosh",
+    "name": "Kasol & Tosh",
+    "slug": "kasol-tosh",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905710/letslivetours/Himachal%20Pradesh/kasol/Kasol-mr200xrf.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905713/letslivetours/Himachal%20Pradesh/kasol/pravati-valley-kasol-mr201046.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905596/letslivetours/Himachal%20Pradesh/Jibhi/Serolsar-Lakee-mr1zyi14.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905471/letslivetours/Himachal%20Pradesh/Jibhi/kulhi-katandii-mr1zvtrq.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902782/letslivetours/Himachal%20Pradesh/Manali/_Himalayan_National_Park-mr1ya6or.jpg"
+    ],
+    "description": "Deep in the verdant Parvati Valley, Kasol and Tosh offer rushing glacial rivers, alpine pine groves, vibrant hippie café culture, and legendary trekking trails to Kheerganga and Malana. The quintessential Himalayan escape for backpackers.",
+    "shortDescription": "Parvati River valley, Tosh alpine village, and pine forest trails.",
+    "bestSeason": "March to June & September to November",
+    "packageCount": 5,
+    "startingPrice": 7499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "udaipur": {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "slug": "udaipur",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782568354/letslivetours/Rajasthan/Udaipur%20sightseeing/Jag-Mandir-Palace-mqwf68yj.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782720166/letslivetours/Rajasthan/Udaipur%20sightseeing/Bagore-Ki-Havelii-mqyxk3j3.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782723463/letslivetours/Rajasthan/Udaipur%20sightseeing/Crystal-Gallery-Udaipurrr-mqyzir79.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782566645/letslivetours/Rajasthan/Jaipur%20Sightseeing/Amber-Fort-i-mqwe5krt.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782722767/letslivetours/Rajasthan/Mount%20Abu/Sunset-Point-Mount-A-mqyz3ulf.jpg"
+    ],
+    "description": "The City of Lakes and Venice of the East, famed for shimmering Lake Pichola boat cruises, grand City Palace marble corridors, and romantic rooftop dining. A regal haven of Mewar heritage, royal courtyards, and golden sunsets.",
+    "shortDescription": "Lake Pichola island palaces, grand City Palace, and royal heritage.",
+    "bestSeason": "October to March (Winter Season)",
+    "packageCount": 5,
+    "startingPrice": 7499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "singapore": {
+    "id": "singapore",
+    "name": "Singapore",
+    "slug": "singapore",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782480792/letslivetours/Singapore/singapore-honeymoon-package-sinagpore-city-tour-aspire-holidays-mquz1h6s.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782481042/letslivetours/Singapore/the-giant-water-fall-hsbc-rain-vortex-and-beautiful-green-nature-shiseido-forest-mquz6u5f.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782472866/letslivetours/Singapore/Merlion-Park-Singapore-mquublh0.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782472858/letslivetours/Singapore/marina-bay-mquubfsb.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782472817/letslivetours/Singapore/Universal-Studios-mquuajnk.jpg"
+    ],
+    "description": "A futuristic garden city featuring the iconic Marina Bay Sands, illuminated Supertree Grove, Michelin-starred dining, and thrill rides at Universal Studios Sentosa. Where lush green nature seamlessly blends with cutting-edge urban luxury.",
+    "shortDescription": "Futuristic Supertree Grove, Marina Bay skyline, and world cuisine.",
+    "bestSeason": "Year-round (November to January festive season)",
+    "packageCount": 4,
+    "startingPrice": 15999,
+    "country": "Singapore",
+    "region": "South East Asia"
+  },
+  "maldives": {
+    "id": "maldives",
+    "name": "Maldives",
+    "slug": "maldives",
+    "heroImage": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1200&q=80"
+    ],
+    "description": "Private island overwater villas floating over crystal-clear turquoise lagoons. The quintessential luxury honeymoon retreat for world-class scuba diving, private dolphin cruises, and unforgettable Indian Ocean sunset dinners.",
+    "shortDescription": "Overwater ocean villas, coral atolls, and turquoise lagoons.",
+    "bestSeason": "November to April (Dry Season & Calm Seas)",
+    "packageCount": 4,
+    "startingPrice": 15999,
+    "country": "Maldives",
+    "region": "Islands & Africa"
+  },
+  "jibhi-tirthan": {
+    "id": "jibhi-tirthan",
+    "name": "Jibhi & Tirthan",
+    "slug": "jibhi-tirthan",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782973869/letslivetours/Himachal%20Pradesh/Jibhi/Jalori-Pass-3-mr34ludz.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905596/letslivetours/Himachal%20Pradesh/Jibhi/Serolsar-Lakee-mr1zyi14.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782905471/letslivetours/Himachal%20Pradesh/Jibhi/kulhi-katandii-mr1zvtrq.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782973477/letslivetours/Himachal%20Pradesh/shangarh/maxresdefault-2-mr34dfr0.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902782/letslivetours/Himachal%20Pradesh/Manali/_Himalayan_National_Park-mr1ya6or.jpg"
+    ],
+    "description": "Tranquil Himalayan hideaways in Banjar Valley, celebrated for cozy cedar treehouses, crystal-clear trout streams, ancient Kathkuni wooden forts, and treks across the 10,800-foot Jalori Pass.",
+    "shortDescription": "Serene pine forests, Jalori Pass, Serolsar Lake, and wooden treehouses.",
+    "bestSeason": "March to June & Sept to November",
+    "packageCount": 4,
+    "startingPrice": 7499,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Jalori Pass & Sacred Serolsar Lake Trek",
+      "Great Himalayan National Park UNESCO Trail",
+      "Jibhi Waterfall & Hidden Wooden Footbridges",
+      "Chehni Kothi Ancient Kathkuni Castle Tower"
+    ]
+  },
+  "chopta-chandrashila": {
+    "id": "chopta-chandrashila",
+    "name": "Chopta & Chandrashila",
+    "slug": "chopta-chandrashila",
+    "heroImage": "https://images.unsplash.com/photo-1591730483538-6b6dd8687820?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1522506209496-4536d9020ec4?w=1200&q=80",
+      "https://images.unsplash.com/photo-1729915192816-71161923fd92?w=1200&q=80",
+      "https://images.unsplash.com/photo-1767284478133-033c43deaaa9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80"
+    ],
+    "description": "The Mini Switzerland of Uttarakhand, offering emerald alpine bugyals, the sacred 1,000-year-old Tungnath Temple at 12,073 ft, and a 360-degree Himalayan sunrise panorama from Chandrashila peak.",
+    "shortDescription": "Tungnath highest Shiva temple, Chandrashila peak, and alpine meadows.",
+    "bestSeason": "April to November & Dec–Feb (Snow Trek)",
+    "packageCount": 4,
+    "startingPrice": 6999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Tungnath World's Highest Shiva Shrine",
+      "Chandrashila 13,100 ft 360° Summit View",
+      "Deoriatal Sacred Emerald Glacial Lake",
+      "Chopta Meadows & Rhododendron Forests"
+    ]
+  },
+  "goa": {
+    "id": "goa",
+    "name": "Goa",
+    "slug": "goa",
+    "heroImage": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1587922546307-776227941871?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=1200&q=80",
+      "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?w=1200&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80"
+    ],
+    "description": "Sun-kissed Arabian Sea beaches, Portuguese colonial villas, vibrant seaside shacks, and serene backwater cruises. Goa is India's beloved coastal escape for water sports, beach parties, soulful sunsets, and laid-back susegad living.",
+    "shortDescription": "Golden sandy beaches, Portuguese architecture, and coastal nightlife.",
+    "bestSeason": "November to March",
+    "packageCount": 4,
+    "startingPrice": 9999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "northeastern-india": {
+    "id": "northeastern-india",
+    "name": "Northeastern India",
+    "slug": "northeastern-india",
+    "heroImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80"
+    ],
+    "description": "Untouched paradise of emerald rainforests, living root bridges, mystical monasteries, and indigenous tribal cultures nestled in India's frontier.",
+    "shortDescription": "Living root bridges, cloud forests, and authentic tribal heritage.",
+    "bestSeason": "October to May",
+    "packageCount": 4,
+    "startingPrice": 18499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "bangalore": {
+    "id": "bangalore",
+    "name": "Bangalore",
+    "slug": "bangalore",
+    "heroImage": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80"
+    ],
+    "description": "India's vibrant Garden City combining lush historical botanical gardens, magnificent Tudor-style Bangalore Palace, and an electric craft brewery culture.",
+    "shortDescription": "Lush botanical gardens, heritage palace architecture, and craft breweries.",
+    "bestSeason": "September to March",
+    "packageCount": 4,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "tirthan": {
+    "id": "tirthan",
+    "name": "Tirthan",
+    "slug": "tirthan",
+    "heroImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80"
+    ],
+    "description": "Untouched gateway to Great Himalayan National Park with whispering pine forests, riverside homestays, and pristine waterfalls.",
+    "shortDescription": "Riverside pine forest retreats and high Himalayan trekking.",
+    "bestSeason": "March to June & Sept to November",
+    "packageCount": 4,
+    "startingPrice": 8499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "gokarna": {
+    "id": "gokarna",
+    "name": "Gokarna",
+    "slug": "gokarna",
+    "heroImage": "https://images.unsplash.com/photo-1642516862292-4b4ca286c19f?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1593359652766-b77c5795bd65?w=1200&q=80",
+      "https://images.unsplash.com/photo-1755921739099-1e7a1131aa3d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1693205118032-9382f7267f55?w=1200&q=80",
+      "https://images.unsplash.com/photo-1587922546307-776227941871?w=1200&q=80"
+    ],
+    "description": "A tranquil Arabian Sea haven in Karnataka where ancient Mahabaleshwar lore meets scenic crescent beaches. Hike scenic coastal cliff trails between Om Beach, Kudle Beach, and secluded Paradise Beach.",
+    "shortDescription": "Om Beach crescent sands, cliffside coast trails, and sacred temples.",
+    "bestSeason": "October to March",
+    "packageCount": 4,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Om Beach Distinctive Crescent Shoreline",
+      "Kudle Beach Bohemian Sunset Cafes",
+      "Coastal Cliff Trek Linking 5 Pristine Beaches",
+      "Historic Mahabaleshwar Temple & Mirjan Fort"
+    ]
+  },
+  "mcleodganj-bir": {
+    "id": "mcleodganj-bir",
+    "name": "McLeod Ganj & Bir",
+    "slug": "mcleodganj-bir",
+    "heroImage": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80",
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Combine Tibetan culture, serene monastery walks, and the Triund ridge in McLeod Ganj with world-class Himalayan paragliding over tea gardens in Bir.",
+    "shortDescription": "Dhauladhar trekking, Tibetan monastery culture, and paragliding.",
+    "bestSeason": "October to June",
+    "packageCount": 3,
+    "startingPrice": 7999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "jaisalmer": {
+    "id": "jaisalmer",
+    "name": "Jaisalmer",
+    "slug": "jaisalmer",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782567170/letslivetours/Rajasthan/Jaisalmer%20Sightseeing%20Tour/Jaisalmer-Fortt-mqwegu7o.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782727619/letslivetours/Rajasthan/Jaisalmer%20Sightseeing%20Tour/amdunes-mqz1zu62.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782567475/letslivetours/Rajasthan/Jaisalmer%20Sightseeing%20Tour/Patwon-ki-Haveli-mqwemz1d.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782713903/letslivetours/Rajasthan/3214847-mqyttumm.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782720711/letslivetours/Rajasthan/premium_photo-1697729789803-48b0c82365ff-mqyxvs3y.jpg"
+    ],
+    "description": "The Golden City of the Thar Desert, distinguished by its massive living yellow-sandstone fort, intricately carved merchant havelis, and magical camel safaris over the rolling Sam Sand Dunes.",
+    "shortDescription": "Living Sonar Qila fort, Thar camel safaris, and carved havelis.",
+    "bestSeason": "October to March",
+    "packageCount": 3,
+    "startingPrice": 7999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Living Jaisalmer Fort (Sonar Qila)",
+      "Sam Sand Dunes Sunset Camel Safari",
+      "Patwon Ki Haveli Intricate Stone Craft",
+      "Desert Stargazing & Folk Music Nights"
+    ]
+  },
+  "mcleod": {
+    "id": "mcleod",
+    "name": "McLeod Ganj",
+    "slug": "mcleod",
+    "heroImage": "https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80",
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80"
+    ],
+    "description": "Perched on the Dhauladhar ridges, McLeod Ganj is the serene home of the Dalai Lama, surrounded by cedar forests, Tibetan monasteries, and the Triund trail.",
+    "shortDescription": "Tibetan spiritual heritage, cedar forests, and Dhauladhar ridge views.",
+    "bestSeason": "March to June & Sept to December",
+    "packageCount": 3,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "greece": {
+    "id": "greece",
+    "name": "Greece",
+    "slug": "greece",
+    "heroImage": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1555993539-1732b0258235?w=1200&q=80",
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&q=80",
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=1200&q=80",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1200&q=80"
+    ],
+    "description": "The cradle of Western civilization, captivating travelers with the ancient Acropolis in Athens, Santorini's iconic blue-domed cliffside villages over the Aegean caldera, and sun-soaked Mykonos beaches.",
+    "shortDescription": "Santorini Oia caldera, Athens Acropolis temples, and Aegean islands.",
+    "bestSeason": "April to October",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "Greece",
+    "region": "Europe",
+    "highlights": [
+      "Santorini Oia Caldera Whitewashed Sunset",
+      "Athens Acropolis & Classical Parthenon Temple",
+      "Mykonos Windmills & Little Venice Alleys",
+      "Navagio Shipwreck Cove & Turquoise Waters"
+    ]
+  },
+  "cambodia": {
+    "id": "cambodia",
+    "name": "Cambodia",
+    "slug": "cambodia",
+    "heroImage": "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80"
+    ],
+    "description": "Home to the magnificent Angkor Wat temple complex, mystical Ta Prohm stone ruins embraced by giant banyan roots, and floating villages on Tonle Sap Lake.",
+    "shortDescription": "Angkor Wat stone temples, giant banyan ruins, and Tonle Sap waterways.",
+    "bestSeason": "November to March",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "Cambodia",
+    "region": "South East Asia"
+  },
+  "northern-lights": {
+    "id": "northern-lights",
+    "name": "Northern Lights",
+    "slug": "northern-lights",
+    "heroImage": "https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=80",
+      "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80"
+    ],
+    "description": "Witness the celestial Aurora Borealis dance across Arctic skies, stay in glass igloos, and experience husky sledding across pristine snow landscapes.",
+    "shortDescription": "Aurora Borealis dancing skies, glass igloos, and Arctic adventures.",
+    "bestSeason": "November to March",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "Arctic Scandinavia",
+    "region": "Europe"
+  },
+  "sikkim": {
+    "id": "sikkim",
+    "name": "Sikkim",
+    "slug": "sikkim",
+    "heroImage": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80"
+    ],
+    "description": "Guarded by the mighty Kanchenjunga peak, Sikkim offers pristine high-altitude lakes, Buddhist monasteries, and vibrant rhododendron valleys.",
+    "shortDescription": "Kanchenjunga vistas, Tsomgo Lake, and sacred Buddhist monasteries.",
+    "bestSeason": "March to May & Oct to Mid-December",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "shimla": {
+    "id": "shimla",
+    "name": "Shimla",
+    "slug": "shimla",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782902006/letslivetours/Himachal%20Pradesh/Shimla/shimla-555885_1280-mr1xtkmd.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782901824/letslivetours/Himachal%20Pradesh/Shimla/Jakhu-Hanuman-Temple-mr1xpnm9.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782975836/letslivetours/Himachal%20Pradesh/Shimla/kufriii-mr35rz3a.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782901551/letslivetours/Himachal%20Pradesh/Shimla/Chadwick-Falls-mr1xjs2i.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782973137/letslivetours/Himachal%20Pradesh/shangarh/shimla-india-shutterstock_401682040_782e317f1f-mr3465c4.jpg"
+    ],
+    "description": "The Queen of Hills and former British summer capital, featuring colonial gothic architecture along The Ridge, Mall Road pedestrian walks, Jakhu Temple panoramas, and apple-scented slopes in Kufri.",
+    "shortDescription": "The Ridge Christ Church, Mall Road walks, and snowy Kufri slopes.",
+    "bestSeason": "March to June & Dec–Feb (Snowfall)",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "The Ridge & Neo-Gothic Christ Church",
+      "Jakhu Hill & Giant Hanuman Statue",
+      "Kufri Snow Viewpoints & Adventure Park",
+      "Heritage Kalka-Shimla Toy Train Mountain Ride"
+    ]
+  },
+  "phuket": {
+    "id": "phuket",
+    "name": "Phuket",
+    "slug": "phuket",
+    "heroImage": "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&q=80",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Thailand's largest island destination boasting powdery white sands, cliffside luxury beach resorts, vibrant nightlife, and speed-boat day tours to Phi Phi.",
+    "shortDescription": "Powdery white beaches, Andaman scuba reefs, and luxury resorts.",
+    "bestSeason": "November to April",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "Thailand",
+    "region": "South East Asia"
+  },
+  "delhi": {
+    "id": "delhi",
+    "name": "Delhi",
+    "slug": "delhi",
+    "heroImage": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80"
+    ],
+    "description": "India's historic capital where centuries-old Mughal fortresses, Humayun's Tomb, and bustling Chandni Chowk bazaars blend with tree-lined avenues and contemporary fine dining.",
+    "shortDescription": "Mughal monuments, India Gate promenades, and vibrant historic bazaars.",
+    "bestSeason": "October to March",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "mussoorie": {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "slug": "mussoorie",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802256/letslivetours/Uttarakhand/Mussoorie/kempty-falls-mussoorie-tourism-header-mr0afkg9.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802542/letslivetours/Uttarakhand/Mussoorie/gun-hill-mr0alp0y.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802954/letslivetours/Uttarakhand/Mussoorie/utzcdlihfhekyigcoejm4prj3oun_shutterstock_1491801584-mr0auiea.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802265/letslivetours/Uttarakhand/Mussoorie/2-mr0afrez.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782802452/letslivetours/Uttarakhand/Mussoorie/1kempty-falls-mr0ajrs6.jpg"
+    ],
+    "description": "The Queen of the Hills in Garhwal, set along a high horseshoe ridge overlooking the Doon Valley. Famous for cascading Kempty Falls, breezy Camel's Back nature walks, and sunset views from Gun Hill.",
+    "shortDescription": "Kempty Falls cascades, Gun Hill ropeway, and panoramic Doon Valley views.",
+    "bestSeason": "April to June & Sept to November",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Kempty Falls Cascading Mountain Waterfall",
+      "Gun Hill Aerial Ropeway & Valley Panoramas",
+      "Lal Tibba Vintage Telescope Himalayan Viewpoint",
+      "Camel's Back Road Tranquil Pine Forest Stroll"
+    ]
+  },
+  "rishikesh": {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "slug": "rishikesh",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782798016/letslivetours/Uttarakhand/Rishikesh/Lakshman-Jhula-mr07woaw.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782798401/letslivetours/Uttarakhand/Rishikesh/neem-beach-rishikesh-mr084xhq.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782798251/letslivetours/Uttarakhand/Rishikesh/Beatles-Ashramm-mr081po4.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782798264/letslivetours/Uttarakhand/Rishikesh/parmarth-niketan--mr0820an.jpg",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782817699/letslivetours/Uttarakhand/Rishikesh/Giant-Swing-Pics-mr0jmjgv.jpg"
+    ],
+    "description": "The Yoga Capital of the World along the holy Ganges. Renowned for spiritual ashrams, serene evening Ganga aartis at Parmarth Niketan, and exhilarating white-water rafting through Himalayan rapids.",
+    "shortDescription": "Holy Ganga evening aartis, spiritual ashrams, and white-water rafting.",
+    "bestSeason": "September to April",
+    "packageCount": 2,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent",
+    "highlights": [
+      "Ganga Aarti at Parmarth & Triveni Ghat",
+      "White Water Rafting Grade III-IV Rapids",
+      "Historic Beatles Ashram (Chaurasi Kutia)",
+      "Cliff Jumping & Mohan Chatti Giant Swing"
+    ]
+  },
+  "gujarat": {
+    "id": "gujarat",
+    "name": "Gujarat",
+    "slug": "gujarat",
+    "heroImage": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&q=80"
+    ],
+    "description": "The white salt desert of Rann of Kutch, Asiatic lions in Gir National Park, and historic stepwells. Gujarat offers an incomparable cultural tapestry.",
+    "shortDescription": "White Rann salt desert, Gir lions, and vibrant textile heritage.",
+    "bestSeason": "October to March",
+    "packageCount": 1,
+    "startingPrice": 899,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "spain": {
+    "id": "spain",
+    "name": "Spain",
+    "slug": "spain",
+    "heroImage": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/161815/pexels-photo-161815.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=80",
+      "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&q=80"
+    ],
+    "description": "Gaudí's architectural masterpieces in Barcelona, royal palaces in Madrid, flamenco rhythms, and golden Mediterranean beaches.",
+    "shortDescription": "Gaudí architecture, flamenco passion, and Mediterranean coastlines.",
+    "bestSeason": "April to October",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Spain",
+    "region": "Europe"
+  },
+  "egypt": {
+    "id": "egypt",
+    "name": "Egypt",
+    "slug": "egypt",
+    "heroImage": "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=80"
+    ],
+    "description": "The Great Pyramids of Giza, the timeless Nile River, Luxor's Valley of the Kings, and ancient pharaonic monuments dating back millennia.",
+    "shortDescription": "Giza Pyramids, Nile luxury cruises, and ancient pharaonic temples.",
+    "bestSeason": "October to April",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Egypt",
+    "region": "Middle East"
+  },
+  "philippines": {
+    "id": "philippines",
+    "name": "Philippines",
+    "slug": "philippines",
+    "heroImage": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80"
+    ],
+    "description": "An archipelago of over 7,000 islands featuring the world-famous limestone karsts of El Nido, crystal turquoise lagoons of Coron, and white sand shores of Boracay.",
+    "shortDescription": "El Nido limestone lagoons, island-hopping catamarans, and coral reefs.",
+    "bestSeason": "November to April",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Philippines",
+    "region": "South East Asia"
+  },
+  "oman": {
+    "id": "oman",
+    "name": "Oman",
+    "slug": "oman",
+    "heroImage": "https://images.unsplash.com/photo-1549144511-f099e773c147?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=1200&q=80"
+    ],
+    "description": "Jewel of Arabia boasting dramatic desert dunes in Wahiba Sands, crystal-clear emerald wadis, historic coastal forts, and the grand architecture of Muscat.",
+    "shortDescription": "Emerald desert wadis, grand Sultan Qaboos mosque, and coastal fjords.",
+    "bestSeason": "October to April",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Oman",
+    "region": "Middle East"
+  },
+  "nepal": {
+    "id": "nepal",
+    "name": "Nepal",
+    "slug": "nepal",
+    "heroImage": "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80"
+    ],
+    "description": "Home to Mount Everest, ancient Kathmandu Durbar squares, serene Pokhara lake views, and legendary Himalayan trekking trails.",
+    "shortDescription": "Mount Everest vistas, ancient Durbar squares, and Annapurna trails.",
+    "bestSeason": "October to December & March to May",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Nepal",
+    "region": "India & Subcontinent"
+  },
+  "russia": {
+    "id": "russia",
+    "name": "Russia",
+    "slug": "russia",
+    "heroImage": "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/161815/pexels-photo-161815.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1200&q=80",
+      "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1200&q=80"
+    ],
+    "description": "Grand imperial palaces of Saint Petersburg, onion-domed Saint Basil's Cathedral in Moscow, world-class Bolshoi ballet, and dramatic Arctic landscapes.",
+    "shortDescription": "Red Square onion domes, imperial Saint Petersburg palaces, and ballet.",
+    "bestSeason": "May to September",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Russia",
+    "region": "Europe"
+  },
+  "malaysia": {
+    "id": "malaysia",
+    "name": "Malaysia",
+    "slug": "malaysia",
+    "heroImage": "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782454764/letslivetours/Malaysia/kulla%20lumpur%20city/Kuala-Lumpur-Malaysia-Buildings-mqujjllr.jpg",
+    "images": [
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782472953/letslivetours/Singapore/Twin-tower-KUL-mquudfuv.jpg",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80",
+      "https://images.unsplash.com/photo-1508062878650-88b52897f298?w=1200&q=80",
+      "https://res.cloudinary.com/dlvce2nsv/image/upload/v1782281748/letslivetours/Malaysia/Genting-Highlands-mqrojacm.jpg"
+    ],
+    "description": "A dynamic blend of futuristic Kuala Lumpur skylines, ancient Batu Caves temples, Langkawi rainforest islands, and historic George Town street cuisine. Experience the multicultural energy of Asia's most diverse melting pot.",
+    "shortDescription": "Petronas Twin Towers, Langkawi tropical beaches, and Batu Caves.",
+    "bestSeason": "December to April & June to August",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Malaysia",
+    "region": "South East Asia"
+  },
+  "tawang": {
+    "id": "tawang",
+    "name": "Tawang",
+    "slug": "tawang",
+    "heroImage": "https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Perched at 3,048m in Arunachal Pradesh, Tawang is home to India's largest Buddhist monastery, frozen Sela Pass, and roaring Nuranang waterfall.",
+    "shortDescription": "India's largest Buddhist monastery, Sela Pass, and roaring waterfalls.",
+    "bestSeason": "March to June & Sept to November",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "kasol-kheerganga": {
+    "id": "kasol-kheerganga",
+    "name": "Kasol & Kheerganga",
+    "slug": "kasol-kheerganga",
+    "heroImage": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80",
+      "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Hike through lush oak and pine forests to the legendary hot water spring at Kheerganga, taking in panoramic views of the Parvati valley mountains.",
+    "shortDescription": "Parvati Valley trek, pine forests, and natural geothermal springs.",
+    "bestSeason": "March to June & Sept to November",
+    "packageCount": 1,
+    "startingPrice": 7499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "valley-of-flowers": {
+    "id": "valley-of-flowers",
+    "name": "Valley of Flowers",
+    "slug": "valley-of-flowers",
+    "heroImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+      "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80"
+    ],
+    "description": "UNESCO World Heritage national park bursting into a vibrant carpet of endemic alpine blooms, rare medicinal flora, and roaring glacial streams in Chamoli.",
+    "shortDescription": "UNESCO alpine wildflower meadows, Chamoli valleys, and glacial streams.",
+    "bestSeason": "July to September (Peak Bloom)",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "wayanad": {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "slug": "wayanad",
+    "heroImage": "https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80",
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Nestled in the Western Ghats, Wayanad enchants with spice plantations, misty Chembra Peak heart-shaped lake, and bamboo treehouse retreats.",
+    "shortDescription": "Misty Western Ghats, spice plantations, and forest treehouses.",
+    "bestSeason": "October to May",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "zanskar": {
+    "id": "zanskar",
+    "name": "Zanskar",
+    "slug": "zanskar",
+    "heroImage": "https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.pexels.com/photos/3225528/pexels-photo-3225528.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80"
+    ],
+    "description": "Remote Himalayan valley renowned for frozen river Chadar treks, the cliff-clinging Phuktal Monastery, and pristine turquoise rivers carving deep mountain gorges.",
+    "shortDescription": "Deep Himalayan gorges, Phuktal cliffside monastery, and winter ice treks.",
+    "bestSeason": "June to September (Summer) & Jan–Feb (Ice Trek)",
+    "packageCount": 1,
+    "startingPrice": 10000,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "shangarh": {
+    "id": "shangarh",
+    "name": "Shangarh",
+    "slug": "shangarh",
+    "heroImage": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80",
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "Tucked away in the Sainj Valley, Shangarh is famous for its vast, emerald green meadow surrounded by towering pines and ancient wooden temples.",
+    "shortDescription": "Emerald mountain meadows and quiet Sainj Valley forests.",
+    "bestSeason": "April to June & Sept to November",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "hampta-pass": {
+    "id": "hampta-pass",
+    "name": "Hampta Pass",
+    "slug": "hampta-pass",
+    "heroImage": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80",
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=1200&q=80",
+      "https://images.pexels.com/photos/1574843/pexels-photo-1574843.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "A dramatic crossover trek transitioning from the lush pine valleys of Kullu to the stark barren moonscapes of Lahaul, culminating at the azure Chandratal Lake.",
+    "shortDescription": "Lush Kullu valley crossover to barren Lahaul and Chandratal lake.",
+    "bestSeason": "June to September",
+    "packageCount": 1,
+    "startingPrice": 8499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "uttar-pradesh": {
+    "id": "uttar-pradesh",
+    "name": "Uttar Pradesh",
+    "slug": "uttar-pradesh",
+    "heroImage": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80"
+    ],
+    "description": "Heart of Indian heritage featuring the world-wonder Taj Mahal in Agra, ancient spiritual ghats of Varanasi, and sacred Sangam in Prayagraj.",
+    "shortDescription": "Taj Mahal architectural wonder, spiritual Varanasi ghats, and royal heritage.",
+    "bestSeason": "October to March",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "uzbekistan": {
+    "id": "uzbekistan",
+    "name": "Uzbekistan",
+    "slug": "uzbekistan",
+    "heroImage": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=85",
+    "images": [
+      "https://images.pexels.com/photos/2044434/pexels-photo-2044434.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80"
+    ],
+    "description": "Legendary Silk Road oasis cities of Samarkand, Bukhara, and Khiva, adorned with breathtaking turquoise mosaic domes and minarets.",
+    "shortDescription": "Silk Road turquoise mosques, ancient madrasas, and desert caravans.",
+    "bestSeason": "April to June & Sept to November",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Uzbekistan",
+    "region": "Europe"
+  },
+  "switzerland": {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "slug": "switzerland",
+    "heroImage": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=1200&q=80",
+      "https://images.unsplash.com/photo-1573155993874-d5d48af862ba?w=1200&q=80",
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=80"
+    ],
+    "description": "The quintessential alpine paradise, famed for the dramatic Matterhorn summit in Zermatt, Lauterbrunnen's 72 cliffside waterfalls, scenic Lake Lucerne, and legendary Glacier Express railway journeys.",
+    "shortDescription": "Matterhorn alpine peaks, Lauterbrunnen waterfalls, and glacier trains.",
+    "bestSeason": "May to September & Dec–March (Skiing)",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Switzerland",
+    "region": "Europe",
+    "highlights": [
+      "Iconic Matterhorn & Car-Free Zermatt Village",
+      "Lauterbrunnen Valley of 72 Waterfalls",
+      "Lake Lucerne & 14th-Century Chapel Bridge",
+      "Glacier Express High-Alpine Panoramic Train"
+    ]
+  },
+  "bir-billing": {
+    "id": "bir-billing",
+    "name": "Bir Billing",
+    "slug": "bir-billing",
+    "heroImage": "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.unsplash.com/photo-1626014303757-6466336e4f3a?w=1200&q=80",
+      "https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "The paragliding capital of India. Soar above the Kangra Valley from Billing at 2,400m and land in peaceful Tibetan tea gardens in Bir.",
+    "shortDescription": "World-class paragliding, Tibetan tea gardens, and mountain sunsets.",
+    "bestSeason": "October to June",
+    "packageCount": 1,
+    "startingPrice": 8499,
+    "country": "India",
+    "region": "India & Subcontinent"
+  },
+  "mauritius": {
+    "id": "mauritius",
+    "name": "Mauritius",
+    "slug": "mauritius",
+    "heroImage": "https://images.unsplash.com/photo-1589553416260-f586c8f1514f?w=1600&q=85",
+    "images": [
+      "https://images.unsplash.com/photo-1692722387928-0155436b02b6?w=1200&q=80",
+      "https://images.unsplash.com/photo-1690413994326-b6fff711b59c?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
+      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=1200&q=80"
+    ],
+    "description": "A glittering jewel of the Indian Ocean surrounded by coral reefs. Experience UNESCO-listed Le Morne Brabant, the rainbow dunes of Chamarel Seven Coloured Earth, and luxury beachfront catamaran sailing.",
+    "shortDescription": "Le Morne Brabant lagoon, Chamarel colored sands, and luxury cruises.",
+    "bestSeason": "October to April",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "Mauritius",
+    "region": "Islands & Africa",
+    "highlights": [
+      "UNESCO Le Morne Brabant Mountain & Lagoon",
+      "Chamarel Seven Coloured Earth Volcanic Dunes",
+      "Île aux Cerfs Lagoon Catamaran Sailing",
+      "Barrier Reef Snorkeling & Marine Encounters"
+    ]
+  },
+  "chikmagalur": {
+    "id": "chikmagalur",
+    "name": "Chikmagalur",
+    "slug": "chikmagalur",
+    "heroImage": "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "images": [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80",
+      "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&q=80",
+      "https://images.pexels.com/photos/1483053/pexels-photo-1483053.jpeg?auto=compress&cs=tinysrgb&w=1200"
+    ],
+    "description": "The coffee capital of Karnataka set in the verdant Baba Budangiri hills, featuring aromatic coffee estates, Mullayanagiri peak, and cascading waterfalls.",
+    "shortDescription": "Aromatic coffee plantations, Mullayanagiri peak, and misty hills.",
+    "bestSeason": "September to May",
+    "packageCount": 1,
+    "startingPrice": 15999,
+    "country": "India",
+    "region": "India & Subcontinent"
+  }
+}

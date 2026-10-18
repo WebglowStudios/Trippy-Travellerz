@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Trippy Travellers — Dream · Explore · Discover",
+  title: "Trippy Travelerz — Dream · Explore · Discover",
   description: "Handcrafted luxury journeys, curated travel experiences, and breathtaking destinations crafted for real moments.",
 };
 
