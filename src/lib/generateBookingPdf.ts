@@ -294,6 +294,66 @@ export function generateBookingPdf(booking: BookingPdfData): void {
     }
   }
 
+  // ═══════════════════════════════════════════════════════
+  // GUEST DETAILS / CO-TRAVELLERS
+  // ═══════════════════════════════════════════════════════
+  if (booking.travellersDetails && booking.travellersDetails.length > 0) {
+    checkPage(30);
+    doc.setFillColor(...C.ochre);
+    doc.rect(M, y, 18, 1.5, "F");
+    y += 7;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(...C.brown);
+    doc.text("Co-Travellers", M, y);
+    y += 8;
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8.5);
+
+    for (let i = 0; i < booking.travellersDetails.length; i++) {
+      const t = booking.travellersDetails[i];
+      const typeLabel = t.type ? t.type.charAt(0).toUpperCase() + t.type.slice(1) : "Adult";
+      const dobFormatted = t.dob ? new Date(t.dob).toLocaleDateString("en-GB") : "";
+      const dobStr = dobFormatted ? `, DOB: ${dobFormatted}` : "";
+      let ageNum = t.age;
+      if (ageNum === undefined && t.dob) {
+        const birthDate = new Date(t.dob);
+        if (!isNaN(birthDate.getTime())) {
+          const today = new Date();
+          let a = today.getFullYear() - birthDate.getFullYear();
+          const m = today.getMonth() - birthDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) a--;
+          if (a >= 0) ageNum = a;
+        }
+      }
+      const ageStr = ageNum !== undefined ? `, Age: ${ageNum}` : "";
+      const phoneStr = t.phone ? ` | Ph: ${s(t.phone)}` : "";
+
+      doc.setTextColor(...C.ochre);
+      doc.setFont("helvetica", "bold");
+      doc.text(`${i + 1}.`, M, y);
+      doc.setTextColor(...C.dark);
+      doc.setFont("helvetica", "normal");
+
+      // Wrap infoText to content width minus index prefix (8) and badge space (22)
+      const infoText = `${s(t.name || "—")}${dobStr}${ageStr}${phoneStr}`;
+      const maxInfoW = CW - 8 - 22;
+      const infoLines = doc.splitTextToSize(infoText, maxInfoW);
+      doc.text(infoLines, M + 8, y);
+
+      // Type badge — fixed right-column position, aligned to first line so it never overlaps
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(7);
+      doc.setTextColor(...C.gray);
+      doc.text(`[${typeLabel}]`, M + CW - doc.getTextWidth(`[${typeLabel}]`), y);
+      doc.setFontSize(8.5);
+
+      y += infoLines.length * 5.5 + 1;
+    }
+    y += 6;
+  }
+
   // Payment Status Card
   y += 4;
   checkPage(34);
@@ -329,7 +389,7 @@ export function generateBookingPdf(booking: BookingPdfData): void {
   const notes = [
     "Please carry a valid government ID or Passport matching the lead traveler name.",
     "Your private travel concierge will reach out 72 hours prior with operational transfers.",
-    "For customized itinerary adjustments or date queries, contact support at concierge@trippytravelerz.com.",
+    "For customized itinerary adjustments or date queries, contact support at travelerztrippy@gmail.com.",
     "Official digital confirmation generated under Trippy Travelerz reservation terms.",
   ];
 
@@ -353,7 +413,7 @@ export function generateBookingPdf(booking: BookingPdfData): void {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(7);
   doc.setTextColor(...C.gray);
-  doc.text("Trippy Travelerz  |  concierge@trippytravelerz.com  |  +91 98765 43210", M, footY + 5);
+  doc.text("Trippy Travelerz  |  travelerztrippy@gmail.com  |  +91 95498 58774", M, footY + 5);
   doc.text(`Generated: ${formatShortDate(new Date().toISOString())}`, W - M, footY + 5, { align: "right" });
 
   doc.setFontSize(6.5);

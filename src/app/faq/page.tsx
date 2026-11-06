@@ -323,7 +323,7 @@ export default function FAQPage() {
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a
-                href="https://wa.me/917666226649?text=Hi%20Trippy%20Travellerz%2C%20I%20have%20a%20question%20about%20booking%20a%20tour!"
+                href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellerz%2C%20I%20have%20a%20question%20about%20booking%20a%20tour!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp-concierge"

@@ -74,7 +74,7 @@ export default function RefundPage() {
 
               <h2>1. Land Package Refund Schedule</h2>
               <p>
-                Cancellations must be communicated in writing via email to <strong>cancellations@trippytravelerz.com</strong> or submitted through your Traveler Dashboard. The effective cancellation date is the timestamp when our operations desk receives written notice:
+                Cancellations must be communicated in writing via email to <strong>travelerztrippy@gmail.com</strong> or submitted through your Traveler Dashboard. The effective cancellation date is the timestamp when our operations desk receives written notice:
               </p>
 
               {/* Responsive Refund Table */}
@@ -181,7 +181,7 @@ export default function RefundPage() {
                   </p>
                 </div>
                 <a
-                  href="https://wa.me/917666226649?text=Hi%20Trippy%20Travellerz%2C%20I%20need%20assistance%20with%20rescheduling%20or%20cancelling%20my%20booking"
+                  href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellerz%2C%20I%20need%20assistance%20with%20rescheduling%20or%20cancelling%20my%20booking"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp-concierge"

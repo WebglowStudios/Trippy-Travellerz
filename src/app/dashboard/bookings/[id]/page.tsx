@@ -14,11 +14,13 @@ import { generateBookingPdf, BookingPdfData } from "@/lib/generateBookingPdf";
 interface BookingDetail {
   _id: string;
   bookingId?: string;
+  destination?: { name?: string; slug?: string } | string;
   package?: {
     _id?: string;
     name?: string;
     slug?: string;
     destination?: { name?: string; slug?: string } | string;
+    customDestinationText?: string;
     duration?: { nights?: number; days?: number } | number;
     images?: string[];
     hotelRating?: string;
@@ -346,7 +348,13 @@ function BookingDetailInner() {
                           {booking.package?.name || "Curated Signature Journey"}
                         </h4>
                         <p style={{ fontSize: 13.5, color: "var(--text-body)", margin: "0 0 6px" }}>
-                          Destination: <strong>{typeof booking.package?.destination === "object" ? booking.package.destination?.name : booking.package?.destination || "Global"}</strong>
+                          Destination: <strong>{
+                            (typeof booking.destination === "object" ? booking.destination?.name : null) ||
+                            (typeof booking.package?.destination === "object" ? booking.package.destination?.name : null) ||
+                            booking.package?.customDestinationText ||
+                            (typeof booking.destination === "string" ? booking.destination : null) ||
+                            "Global"
+                          }</strong>
                         </p>
                         {booking.package?.slug && (
                           <Link
@@ -398,7 +406,7 @@ function BookingDetailInner() {
                         Need airport escort details, private transfer updates, or custom dietary arrangements?
                       </p>
                       <a
-                        href="https://wa.me/919876543210?text=Hi%20Trippy%20Travellerz%2C%20I%20have%20a%20query%20about%20my%20reservation."
+                        href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellerz%2C%20I%20have%20a%20query%20about%20my%20reservation."
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -413,7 +421,7 @@ function BookingDetailInner() {
                           borderRadius: 999,
                         }}
                       >
-                        <span>Chat via WhatsApp (+91 98765 43210)</span>
+                        <span>Chat via WhatsApp (+91 95498 58774)</span>
                       </a>
                     </div>
                   </div>

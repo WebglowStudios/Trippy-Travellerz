@@ -96,7 +96,7 @@ export default function TermsPage() {
 
               <h2>7. Governing Law & Dispute Resolution</h2>
               <p>
-                These Terms and Conditions and any dispute or claim arising out of or in connection with them shall be governed by and construed in accordance with the laws of India. Any legal proceedings shall be subject to the exclusive jurisdiction of the competent courts in Bengaluru or Pune, India.
+                These Terms and Conditions and any dispute or claim arising out of or in connection with them shall be governed by and construed in accordance with the laws of India. Any legal proceedings shall be subject to the exclusive jurisdiction of the competent courts in Udaipur (Rajasthan) or Manali (Himachal Pradesh), India.
               </p>
 
               <div
@@ -118,7 +118,7 @@ export default function TermsPage() {
                     Questions about our booking policies?
                   </strong>
                   <span style={{ fontSize: 13, color: "var(--text-body)" }}>
-                    Our legal and operations concierge is available at hello@trippytravelerz.com
+                    Our legal and operations concierge is available at travelerztrippy@gmail.com
                   </span>
                 </div>
                 <Link

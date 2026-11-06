@@ -436,7 +436,7 @@ function DashboardInner() {
                   Need flight updates, villa transfers, or custom culinary reservations?
                 </p>
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Trippy%20Travellerz%2C%20I%20need%20assistance%20with%20my%20dashboard."
+                  href="https://wa.me/919549858774?text=Hello%20Trippy%20Travellerz%2C%20I%20need%20assistance%20with%20my%20dashboard."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="dash-concierge-btn"
@@ -1321,7 +1321,7 @@ function DashboardInner() {
                   </div>
                   <div>
                     <span style={{ color: "var(--text-muted)", display: "block", fontSize: 11 }}>EMERGENCY CONCIERGE</span>
-                    <strong>+91 98765 43210</strong>
+                    <strong>+91 95498 58774</strong>
                   </div>
                 </div>
 

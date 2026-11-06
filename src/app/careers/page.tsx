@@ -15,7 +15,7 @@ export default function CareersPage() {
     {
       title: "Senior Travel Designer — Middle East & Europe",
       department: "Itinerary Craftsmanship",
-      location: "Bengaluru / Pune (Hybrid / Remote)",
+      location: "Udaipur / Manali (Hybrid / Remote)",
       type: "Full-Time",
       description:
         "Handcraft bespoke luxury journeys across Dubai, Japan, Switzerland, and Italy. You will consult with high-net-worth travelers, curate boutique hotel suites, and coordinate private chauffeur logistics.",
@@ -54,7 +54,7 @@ export default function CareersPage() {
     {
       title: "Operations & Chauffeur Fleet Coordinator",
       department: "On-Ground Logistics",
-      location: "Pune / Bengaluru",
+      location: "Udaipur / Manali",
       type: "Full-Time",
       description:
         "Ensure precision execution of every flight pickup, private sedan transit, and train transfer. Manage vendor SLA performance, live flight radar tracking, and vehicle safety inspections.",
@@ -75,7 +75,7 @@ export default function CareersPage() {
     {
       icon: "home_work",
       title: "Flexible Remote Freedom",
-      description: "Work from our boutique studios in Bengaluru/Pune or from your favorite home haven with flexible hours.",
+      description: "Work from our boutique studios in Udaipur/Manali or from your favorite home haven with flexible hours.",
     },
     {
       icon: "health_and_safety",
@@ -236,7 +236,7 @@ export default function CareersPage() {
                   </div>
 
                   <a
-                    href={`mailto:careers@trippytravelerz.com?subject=Application for ${encodeURIComponent(role.title)}`}
+                    href={`mailto:travelerztrippy@gmail.com?subject=Application for ${encodeURIComponent(role.title)}`}
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -295,12 +295,12 @@ export default function CareersPage() {
               We are always on the lookout for visionary storytellers, UI designers, and regional guides. Send your portfolio and pitch to us.
             </p>
             <a
-              href="mailto:careers@trippytravelerz.com?subject=Spontaneous Application — Trippy Travelerz"
+              href="mailto:travelerztrippy@gmail.com?subject=Spontaneous Application — Trippy Travelerz"
               className="btn-whatsapp-concierge"
               style={{ display: "inline-flex" }}
             >
               <span className="material-symbols-rounded" style={{ fontSize: 18, color: "var(--brand-brown)" }}>mail</span>
-              <span>careers@trippytravelerz.com</span>
+              <span>travelerztrippy@gmail.com</span>
             </a>
           </div>
 

@@ -55,7 +55,7 @@ export default function CustomItineraryBanner({ onOpenEnquiry }: CustomItinerary
             )}
 
             <a
-              href="https://wa.me/917666226649?text=Hi%20Trippy%20Travellerz%2C%20I%20would%20like%20to%20plan%20a%20custom%20luxury%20holiday!"
+              href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellerz%2C%20I%20would%20like%20to%20plan%20a%20custom%20luxury%20holiday!"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp-concierge"

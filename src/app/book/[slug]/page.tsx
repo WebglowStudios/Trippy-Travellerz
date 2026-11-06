@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { openRazorpayCheckout } from "@/lib/razorpay";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CountrySelect from "@/components/ui/CountrySelect";
 
 interface PackageData {
   _id: string;
@@ -585,7 +586,7 @@ function BookingCheckoutContent() {
         </div>
 
         {/* Checkout 2-Column Layout */}
-        <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) 390px", gap: 36, alignItems: "start" }}>
+        <div className="checkout-layout">
           {/* LEFT COLUMN: THE BOOKING FORM */}
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {submitError && (
@@ -596,7 +597,7 @@ function BookingCheckoutContent() {
             )}
 
             {/* 1. Primary Traveller Information */}
-            <div style={{ background: "#FFFFFF", borderRadius: 20, border: "1.5px solid var(--border-warm)", padding: 28, boxShadow: "var(--shadow-soft)" }}>
+            <div className="checkout-card">
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18, borderBottom: "1px solid var(--border-light)", paddingBottom: 14 }}>
                 <span className="material-symbols-rounded" style={{ fontSize: 22, color: "var(--brand-ochre)" }}>person</span>
                 <h3 className="serif" style={{ fontSize: 20, fontWeight: 700, color: "var(--text-dark)" }}>
@@ -604,7 +605,7 @@ function BookingCheckoutContent() {
                 </h3>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 14 }}>
+              <div className="checkout-form-grid">
                 <div className="enq-input-group">
                   <label className="enq-label">First Name *</label>
                   <input
@@ -629,7 +630,7 @@ function BookingCheckoutContent() {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 14 }}>
+              <div className="checkout-form-grid">
                 <div className="enq-input-group">
                   <label className="enq-label">Email Address *</label>
                   <input
@@ -660,7 +661,7 @@ function BookingCheckoutContent() {
                   <div style={{ fontSize: 12, fontWeight: 700, color: "var(--brand-brown)", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 12 }}>
                     International Travel Documents (RBI LRS)
                   </div>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 14 }}>
+                  <div className="checkout-form-grid">
                     <div className="enq-input-group">
                       <label className="enq-label">PAN Card Number *</label>
                       <input
@@ -685,7 +686,7 @@ function BookingCheckoutContent() {
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                  <div className="checkout-form-grid">
                     <div className="enq-input-group">
                       <label className="enq-label">Passport Expiry Date *</label>
                       <input
@@ -698,12 +699,9 @@ function BookingCheckoutContent() {
                     </div>
                     <div className="enq-input-group">
                       <label className="enq-label">Issuing Country *</label>
-                      <input
-                        type="text"
-                        placeholder="India"
-                        className="enq-input"
+                      <CountrySelect
                         value={primaryIssuingCountry}
-                        onChange={(e) => setPrimaryIssuingCountry(e.target.value)}
+                        onChange={(val) => setPrimaryIssuingCountry(val)}
                         required={pkg.isInternational}
                       />
                     </div>
@@ -713,7 +711,7 @@ function BookingCheckoutContent() {
             </div>
 
             {/* 2. Travel Dates & Departure Slot */}
-            <div style={{ background: "#FFFFFF", borderRadius: 20, border: "1.5px solid var(--border-warm)", padding: 28, boxShadow: "var(--shadow-soft)" }}>
+            <div className="checkout-card">
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18, borderBottom: "1px solid var(--border-light)", paddingBottom: 14 }}>
                 <span className="material-symbols-rounded" style={{ fontSize: 22, color: "var(--brand-ochre)" }}>calendar_month</span>
                 <h3 className="serif" style={{ fontSize: 20, fontWeight: 700, color: "var(--text-dark)" }}>
@@ -779,7 +777,7 @@ function BookingCheckoutContent() {
             </div>
 
             {/* 3. Additional Co-Travellers */}
-            <div style={{ background: "#FFFFFF", borderRadius: 20, border: "1.5px solid var(--border-warm)", padding: 28, boxShadow: "var(--shadow-soft)" }}>
+            <div className="checkout-card">
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18, borderBottom: "1px solid var(--border-light)", paddingBottom: 14 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span className="material-symbols-rounded" style={{ fontSize: 22, color: "var(--brand-ochre)" }}>group</span>
@@ -859,7 +857,7 @@ function BookingCheckoutContent() {
                         </button>
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1.5fr", gap: 12, marginBottom: pkg.isInternational ? 12 : 0 }}>
+                      <div className="traveller-inputs-grid" style={{ marginBottom: pkg.isInternational ? 12 : 0 }}>
                         <div className="enq-input-group">
                           <label className="enq-label">Full Name *</label>
                           <input
@@ -894,7 +892,7 @@ function BookingCheckoutContent() {
                       </div>
 
                       {pkg.isInternational && (
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12, marginTop: 8 }}>
+                        <div className="traveller-passport-grid" style={{ marginTop: 8 }}>
                           <div className="enq-input-group">
                             <label className="enq-label">Passport No. *</label>
                             <input
@@ -918,12 +916,10 @@ function BookingCheckoutContent() {
                           </div>
                           <div className="enq-input-group">
                             <label className="enq-label">Country *</label>
-                            <input
-                              type="text"
-                              placeholder="India"
-                              className="enq-input"
+                            <CountrySelect
                               value={trav.issuingCountry || "India"}
-                              onChange={(e) => updateTraveller(idx, "issuingCountry", e.target.value)}
+                              onChange={(val) => updateTraveller(idx, "issuingCountry", val)}
+                              compact
                               required={pkg.isInternational}
                             />
                           </div>
@@ -955,7 +951,7 @@ function BookingCheckoutContent() {
 
             {/* 5. Dual-Mode Payment Choice (Deposit vs Full) */}
             {paymentConfig?.mode === "partial" && (
-              <div style={{ background: "#FFFFFF", borderRadius: 20, border: "1.5px solid var(--border-warm)", padding: 28, boxShadow: "var(--shadow-soft)" }}>
+              <div className="checkout-card">
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16, borderBottom: "1px solid var(--border-light)", paddingBottom: 12 }}>
                   <span className="material-symbols-rounded" style={{ fontSize: 22, color: "var(--brand-ochre)" }}>payments</span>
                   <h3 className="serif" style={{ fontSize: 20, fontWeight: 700, color: "var(--text-dark)" }}>
@@ -963,7 +959,7 @@ function BookingCheckoutContent() {
                   </h3>
                 </div>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div className="checkout-form-grid">
                   {/* Option A: Partial Deposit */}
                   <div
                     onClick={() => setChosenPayment("deposit")}
@@ -1031,8 +1027,8 @@ function BookingCheckoutContent() {
           </form>
 
           {/* RIGHT COLUMN: STICKY ORDER SUMMARY */}
-          <aside style={{ position: "sticky", top: 96 }}>
-            <div style={{ background: "#FFFFFF", borderRadius: 20, border: "1.5px solid var(--border-warm)", padding: 26, boxShadow: "var(--shadow-card)" }}>
+          <aside className="checkout-sidebar">
+            <div className="checkout-card checkout-sidebar-card">
               {/* Package Snapshot */}
               <div style={{ display: "flex", gap: 14, marginBottom: 18, borderBottom: "1px solid var(--border-light)", paddingBottom: 18 }}>
                 <img
@@ -1181,6 +1177,86 @@ function BookingCheckoutContent() {
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        .checkout-layout {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) 390px;
+          gap: 36px;
+          align-items: start;
+          width: 100%;
+        }
+        .checkout-card {
+          background: #FFFFFF;
+          border-radius: 20px;
+          border: 1.5px solid var(--border-warm);
+          padding: 28px;
+          box-shadow: var(--shadow-soft);
+          box-sizing: border-box;
+          width: 100%;
+        }
+        .checkout-sidebar {
+          position: sticky;
+          top: 96px;
+          width: 100%;
+        }
+        .checkout-sidebar-card {
+          padding: 26px;
+          box-shadow: var(--shadow-card);
+        }
+        .checkout-form-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+          margin-bottom: 14px;
+          width: 100%;
+        }
+        .traveller-inputs-grid {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1.5fr;
+          gap: 12px;
+          width: 100%;
+        }
+        .traveller-passport-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 12px;
+          width: 100%;
+        }
+
+        @media (max-width: 900px) {
+          .checkout-layout {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+          .checkout-sidebar {
+            position: static !important;
+            top: auto !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .checkout-card {
+            padding: 18px 16px !important;
+            border-radius: 16px !important;
+          }
+          .checkout-form-grid {
+            grid-template-columns: 1fr !important;
+            gap: 12px !important;
+          }
+          .traveller-inputs-grid {
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+          .traveller-passport-grid {
+            grid-template-columns: 1fr !important;
+            gap: 10px !important;
+          }
+          input, select, textarea {
+            font-size: 16px !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

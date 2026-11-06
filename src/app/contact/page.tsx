@@ -95,7 +95,7 @@ export default function ContactPage() {
               <div className="contact-channels-list">
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/917666226649?text=Hi%20Trippy%20Travellerz%2C%20I%20would%20like%20to%20plan%20a%20luxury%20holiday!"
+                  href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellerz%2C%20I%20would%20like%20to%20plan%20a%20luxury%20holiday!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-channel-card whatsapp"
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>WhatsApp Concierge</strong>
-                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>+91 76662 26649 (Fastest response &lt;15 mins)</span>
+                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>+91 95498 58774 (Fastest response &lt;15 mins)</span>
                   </div>
                   <span className="material-symbols-rounded" style={{ marginLeft: "auto", color: "var(--brand-ochre)", fontSize: 18 }}>arrow_forward</span>
                 </a>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>Direct Phone Concierge</strong>
-                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>+91 76662 26649 • Toll-Free: 1800-TRIPPY-LIVE</span>
+                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>+91 95498 58774</span>
                   </div>
                 </div>
 
@@ -128,7 +128,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>Email Inquiries</strong>
-                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>concierge@trippytravelerz.com</span>
+                    <span style={{ fontSize: 13, color: "var(--text-muted)" }}>travelerztrippy@gmail.com</span>
                   </div>
                 </div>
 
@@ -138,9 +138,9 @@ export default function ContactPage() {
                     <span className="material-symbols-rounded">location_on</span>
                   </div>
                   <div>
-                    <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>Experience Design Studio</strong>
+                    <strong style={{ fontSize: 15, color: "var(--text-dark)", display: "block" }}>Experience Design Studios</strong>
                     <span style={{ fontSize: 13, color: "var(--text-muted)", lineHeight: 1.5, display: "block" }}>
-                      Trippy Travellers Luxury Journeys, 4th Floor, 100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038
+                      Trippy Travelerz Luxury Journeys, Udaipur (Rajasthan) & Manali (Himachal Pradesh), India
                     </span>
                   </div>
                 </div>

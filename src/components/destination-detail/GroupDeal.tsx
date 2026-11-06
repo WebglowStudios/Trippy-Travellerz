@@ -204,7 +204,7 @@ export default function GroupDeal({
           )}
 
           <a
-            href="https://wa.me/919999999999?text=Hi%20Trippy%20Travellers,%20I%20would%20like%20a%20group%20quote%20for%20our%20trip."
+            href="https://wa.me/919549858774?text=Hi%20Trippy%20Travellers,%20I%20would%20like%20a%20group%20quote%20for%20our%20trip."
             target="_blank"
             rel="noopener noreferrer"
             style={{
